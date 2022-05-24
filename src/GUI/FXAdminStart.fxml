@@ -25,7 +25,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="btnToDoList" mnemonicParsing="false" prefHeight="137.0" prefWidth="149.0" text="To-Do-List" />
+            <Button fx:id="btnToDoList" mnemonicParsing="false" onAction="#toDoListScene" prefHeight="137.0" prefWidth="149.0" text="To-Do-List" />
             <Button fx:id="btnPomodoro" mnemonicParsing="false" onAction="#PomodoroStartScene" prefHeight="137.0" prefWidth="149.0" text="Pomodoro" GridPane.rowIndex="2" />
             <Button fx:id="btnProject" mnemonicParsing="false" onAction="#projectScene" prefHeight="137.0" prefWidth="149.0" text="Project" GridPane.rowIndex="1" />
             <Button fx:id="btnAdmin" mnemonicParsing="false" prefHeight="137.0" prefWidth="149.0" text="Admin" GridPane.rowIndex="3" />
