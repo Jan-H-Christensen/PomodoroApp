@@ -85,7 +85,7 @@ public class Main extends Application {
                 DBHandler.disconnect();
             }
         }));
-        
+
         stage.setResizable(false);
         stage.setScene(loginSearchScene);
         stage.setTitle("Login");
