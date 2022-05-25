@@ -6,11 +6,10 @@ import ObjectTypes.Project;
 import PomodoroApp.ControllerName;
 import PomodoroApp.Main;
 import javafx.fxml.FXML;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Screen;
+
 
 public class Controller {
 
