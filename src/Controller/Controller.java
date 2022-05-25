@@ -12,8 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 
 public class Controller {
-
-
+    
     @FXML
     public TableView<Project> toDoList;
 
@@ -89,5 +88,4 @@ public class Controller {
         Main.changeScene(ControllerName.Login);
         Main.setSceneLocation();
     }
-
 }
