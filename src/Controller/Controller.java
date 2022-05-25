@@ -6,11 +6,14 @@ import ObjectTypes.Project;
 import PomodoroApp.ControllerName;
 import PomodoroApp.Main;
 import javafx.fxml.FXML;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Screen;
 
 public class Controller {
+
 
     @FXML
     public TableView<Project> toDoList;
@@ -45,37 +48,47 @@ public class Controller {
     public  void toDoListScene(){
         DBHandler.setProjects();
         Main.changeScene(ControllerName.ToDoList);
+        Main.setSceneLocation();
     }
     @FXML
     public  void adminStartScene(){
         Main.changeScene(ControllerName.AdminStart);
+        Main.setSceneLocation();
     }
     @FXML
     public  void PomodoroStartScene(){
         Main.changeScene(ControllerName.PomodoroStart);
+        Main.setSceneLocation();
     }
     @FXML
     public  void projectScene(){
         Main.changeScene(ControllerName.Project);
+        Main.setSceneLocation();
     }
     @FXML
     public  void adminCreateScene(){
         Main.changeScene(ControllerName.AdminCreate);
+        Main.setSceneLocation();
     }
     @FXML
     public  void adminDeleteScene(){
         Main.changeScene(ControllerName.AdminDelete);
+        Main.setSceneLocation();
     }
     @FXML
     public  void adminEditScene(){
         Main.changeScene(ControllerName.AdminEdit);
+        Main.setSceneLocation();
     }
     @FXML
     public  void pomodoroProgressScene(){
         Main.changeScene(ControllerName.PomodoroProgress);
+        Main.setSceneLocation();
     }
     @FXML
     private void logoutScene(){
         Main.changeScene(ControllerName.Login);
+        Main.setSceneLocation();
     }
+
 }

@@ -5,14 +5,19 @@ import Data.DataHub;
 import ObjectTypes.Project;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
 
 public class Main extends Application {
 
+    private static Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+    private static double screenX = screenBounds.getMaxX();
+    private static double screenY = screenBounds.getMaxY();
     private static ArrayList<SceneController> sceneControllers = new ArrayList<>();
 
     private static Stage stageHandler;
@@ -88,6 +93,7 @@ public class Main extends Application {
 
         stage.setResizable(false);
         stage.setScene(loginSearchScene);
+        setSceneLocation();
         stage.setTitle("Login");
         stage.show();
     }
@@ -103,5 +109,17 @@ public class Main extends Application {
                 stageHandler.setTitle(sceneConPairName.getName().toString());
             }
         }
+    }
+    public static void setSceneLocation(){
+
+        setStageLocation((screenX/2)-(stageHandler.getScene().getWidth()/2),(screenY/2)-(stageHandler.getScene().getHeight()/2));
+
+    }
+
+    public static void setStageLocation(double x, double y){
+
+        stageHandler.setX(x);
+        stageHandler.setY(y);
+
     }
 }
