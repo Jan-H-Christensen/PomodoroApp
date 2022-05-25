@@ -43,6 +43,7 @@ public class Controller {
     }
     @FXML
     public  void toDoListScene(){
+        DBHandler.setProjects();
         Main.changeScene(ControllerName.ToDoList);
     }
     @FXML
