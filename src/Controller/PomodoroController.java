@@ -5,44 +5,50 @@ import Data.DataHub;
 import ObjectTypes.Project;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
-public class PomodoroController implements ControllerInterface{
+public class PomodoroController extends Controller{
 
-    @FXML
-    public Button btnToDoList, btnProject, btnPomodoro, btnAdmin, btnSettings;
+    @Override
+    public void initialize() {
+        super.initialize();
+    }
 
-    public void logOut(){
-        //TODO clean();
-        for (Project p : DataHub.getToDoList()){
-            DBHandler.freeTask(p.getTaskId());
-        }
-        DataHub.getToDoList().clear();
-        DBHandler.disconnect();
-        logoutScene();
+    @Override
+    public void remove() {
+        super.remove();
+    }
+
+    @Override
+    public void logOut() {
+        super.logOut();
     }
 
     @Override
     public void toDoListScene() {
-        ControllerInterface.super.toDoListScene();
+        super.toDoListScene();
     }
 
     @Override
     public void adminStartScene() {
-        ControllerInterface.super.adminStartScene();
+        super.adminStartScene();
+    }
+
+    @Override
+    public void PomodoroStartScene() {
+        super.PomodoroStartScene();
     }
 
     @Override
     public void projectScene() {
-        ControllerInterface.super.projectScene();
+        super.projectScene();
     }
 
     @Override
     public void pomodoroProgressScene() {
-        ControllerInterface.super.pomodoroProgressScene();
+        super.pomodoroProgressScene();
     }
 
-    @Override
-    public void logoutScene() {
-        ControllerInterface.super.logoutScene();
-    }
 }

@@ -5,57 +5,65 @@ import Data.DataHub;
 import ObjectTypes.Project;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
-public class AdminController implements ControllerInterface{
+public class AdminController extends Controller{
 
-    @FXML
-    public Button btnToDoList, btnProject, btnPomodoro, btnAdmin, btnSettings, btnCreate, btnDelete, btnEdit;
-
-    public void logOut(){
-        for (Project p : DataHub.getToDoList()){
-            DBHandler.freeTask(p.getTaskId());
-        }
-        DataHub.getToDoList().clear();
-        DBHandler.disconnect();
-        logoutScene();
+    @Override
+    public void initialize() {
+        super.initialize();
     }
+
+    @Override
+    public void remove() {
+        super.remove();
+    }
+
+    @Override
+    public void logOut() {
+        super.logOut();
+    }
+
     @Override
     public void toDoListScene() {
-        ControllerInterface.super.toDoListScene();
+        super.toDoListScene();
+    }
+
+    @Override
+    public void adminStartScene() {
+        super.adminStartScene();
     }
 
     @Override
     public void PomodoroStartScene() {
-        ControllerInterface.super.PomodoroStartScene();
+        super.PomodoroStartScene();
     }
 
     @Override
     public void projectScene() {
-        ControllerInterface.super.projectScene();
+        super.projectScene();
     }
 
     @Override
     public void adminCreateScene() {
-        ControllerInterface.super.adminCreateScene();
+        super.adminCreateScene();
     }
 
     @Override
     public void adminDeleteScene() {
-        ControllerInterface.super.adminDeleteScene();
+        super.adminDeleteScene();
     }
 
     @Override
     public void adminEditScene() {
-        ControllerInterface.super.adminEditScene();
+        super.adminEditScene();
     }
 
     @Override
     public void pomodoroProgressScene() {
-        ControllerInterface.super.pomodoroProgressScene();
+        super.pomodoroProgressScene();
     }
 
-    @Override
-    public void logoutScene() {
-        ControllerInterface.super.logoutScene();
-    }
 }

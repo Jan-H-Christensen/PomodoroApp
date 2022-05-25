@@ -47,7 +47,7 @@
          <children>
             <TableView fx:id="toDoList" layoutY="47.0" prefHeight="526.0" prefWidth="200.0" />
             <Label layoutX="2.0" layoutY="4.0" prefHeight="39.0" prefWidth="199.0" text="To-Do-List" />
-            <Button fx:id="btnRemove" layoutX="56.0" layoutY="582.0" mnemonicParsing="false" prefWidth="75.0" text="Remove" />
+            <Button fx:id="btnRemove" layoutX="56.0" layoutY="582.0" mnemonicParsing="false" onAction="#remove" prefWidth="75.0" text="Remove" />
             <Label fx:id="errorToDo" layoutX="19.0" layoutY="617.0" prefHeight="21.0" prefWidth="159.0" />
          </children>
       </Pane>

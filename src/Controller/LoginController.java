@@ -7,7 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class LoginController implements ControllerInterface{
+public class LoginController{
     @FXML
     public TextField username,password;
 
@@ -30,9 +30,8 @@ public class LoginController implements ControllerInterface{
             errorText.setText("Wrong username or password");
         }
     }
-
-    @Override
+    
     public void toDoListScene() {
-        ControllerInterface.super.toDoListScene();
+        Main.changeScene(ControllerName.ToDoList);
     }
 }
