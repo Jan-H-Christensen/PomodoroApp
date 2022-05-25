@@ -18,39 +18,39 @@ public class Main extends Application {
 
         stageHandler = stage;
 
-        FXMLLoader loginSearchLoader = new FXMLLoader(getClass().getResource("../GUI/FXLogin.fxml"));
+        FXMLLoader loginSearchLoader = new FXMLLoader(getClass().getResource("/GUI/FXLogin.fxml"));
         Parent loginSearchPane = loginSearchLoader.load();
         Scene loginSearchScene = new Scene(loginSearchPane,480,400);
-
-        FXMLLoader toDoListLoader = new FXMLLoader(getClass().getResource("../GUI/FXToDoList.fxml"));
+    
+        FXMLLoader toDoListLoader = new FXMLLoader(getClass().getResource("/GUI/FXToDoList.fxml"));
         Parent toDoListPane = toDoListLoader.load();
         Scene toDoListScene = new Scene(toDoListPane,1200,700);
 
-        FXMLLoader projectLoader = new FXMLLoader(getClass().getResource("../GUI/FXProject.fxml"));
+        FXMLLoader projectLoader = new FXMLLoader(getClass().getResource("/GUI/FXProject.fxml"));
         Parent projectPane = projectLoader.load();
         Scene projectScene = new Scene(projectPane,1200,700);
 
-        FXMLLoader pomodoroStartLoader = new FXMLLoader(getClass().getResource("../GUI/FXPomodoroStart.fxml"));
+        FXMLLoader pomodoroStartLoader = new FXMLLoader(getClass().getResource("/GUI/FXPomodoroStart.fxml"));
         Parent pomodoroStartPane = pomodoroStartLoader.load();
         Scene pomodoroStartScene = new Scene(pomodoroStartPane,1200,700);
 
-        FXMLLoader pomodoroProLoader = new FXMLLoader(getClass().getResource("../GUI/FXPomodoroProgress.fxml"));
+        FXMLLoader pomodoroProLoader = new FXMLLoader(getClass().getResource("/GUI/FXPomodoroProgress.fxml"));
         Parent pomodoroProPane = pomodoroProLoader.load();
         Scene pomodoroProScene = new Scene(pomodoroProPane,1200,700);
 
-        FXMLLoader adminStartLoader = new FXMLLoader(getClass().getResource("../GUI/FXAdminStart.fxml"));
+        FXMLLoader adminStartLoader = new FXMLLoader(getClass().getResource("/GUI/FXAdminStart.fxml"));
         Parent adminStartPane = adminStartLoader.load();
         Scene adminStartScene = new Scene(adminStartPane,1200,700);
 
-        FXMLLoader adminCreateLoader = new FXMLLoader(getClass().getResource("../GUI/FXAdminCreate.fxml"));
+        FXMLLoader adminCreateLoader = new FXMLLoader(getClass().getResource("/GUI/FXAdminCreate.fxml"));
         Parent adminCreatePane = adminCreateLoader.load();
         Scene adminCreateScene = new Scene(adminCreatePane,1200,700);
 
-        FXMLLoader adminDeleteLoader = new FXMLLoader(getClass().getResource("../GUI/FXAdminDelete.fxml"));
+        FXMLLoader adminDeleteLoader = new FXMLLoader(getClass().getResource("/GUI/FXAdminDelete.fxml"));
         Parent adminDeletePane = adminDeleteLoader.load();
         Scene adminDeleteScene = new Scene(adminDeletePane,1200,700);
 
-        FXMLLoader adminEditLoader = new FXMLLoader(getClass().getResource("../GUI/FXAdminEdit.fxml"));
+        FXMLLoader adminEditLoader = new FXMLLoader(getClass().getResource("/GUI/FXAdminEdit.fxml"));
         Parent adminEditPane = adminEditLoader.load();
         Scene adminEditScene = new Scene(adminEditPane,1200,700);
 
@@ -66,6 +66,7 @@ public class Main extends Application {
 
         stage.setResizable(false);
         stage.setScene(loginSearchScene);
+        stage.setTitle("Login");
         stage.show();
     }
 
@@ -77,6 +78,7 @@ public class Main extends Application {
 
             if(sceneConPairName.getName().equals(sceneName)){
                 stageHandler.setScene(sceneConPairName.getScene());
+                stageHandler.setTitle(sceneConPairName.getName().toString());
             }
         }
     }
