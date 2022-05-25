@@ -1,5 +1,8 @@
 package Controller;
 
+import DB.DBHandler;
+import Data.DataHub;
+import ObjectTypes.Project;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
@@ -7,6 +10,16 @@ public class ProjectController implements ControllerInterface{
 
     @FXML
     public Button btnToDoList, btnProject, btnPomodoro, btnAdmin, btnSettings;
+
+    public void logOut(){
+        //TODO clean();
+        for (Project p : DataHub.getToDoList()){
+            DBHandler.freeTask(p.getTaskId());
+        }
+        DataHub.getToDoList().clear();
+        DBHandler.disconnect();
+        logoutScene();
+    }
 
     @Override
     public void toDoListScene() {

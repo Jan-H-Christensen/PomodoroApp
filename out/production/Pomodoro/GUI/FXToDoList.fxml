@@ -29,7 +29,7 @@
             <Button fx:id="btnPomodoro" mnemonicParsing="false" onAction="#PomodoroStartScene" prefHeight="137.0" prefWidth="149.0" text="Pomodoro" GridPane.rowIndex="2" />
             <Button fx:id="btnProject" mnemonicParsing="false" onAction="#projectScene" prefHeight="137.0" prefWidth="149.0" text="Project" GridPane.rowIndex="1" />
             <Button fx:id="btnAdmin" mnemonicParsing="false" onAction="#adminStartScene" prefHeight="137.0" prefWidth="149.0" text="Admin" GridPane.rowIndex="3" />
-            <Button fx:id="btnLogout" mnemonicParsing="false" onAction="#logoutScene" prefHeight="137.0" prefWidth="149.0" text="Logout" GridPane.rowIndex="4" />
+            <Button fx:id="btnLogout" mnemonicParsing="false" onAction="#logOut" prefHeight="137.0" prefWidth="149.0" text="Logout" GridPane.rowIndex="4" />
             <Button fx:id="btnSettings" mnemonicParsing="false" prefHeight="137.0" prefWidth="149.0" text="Setting" GridPane.rowIndex="5" />
          </children>
       </GridPane>
@@ -46,7 +46,7 @@
          <children>
             <TableView fx:id="toDoList" layoutY="47.0" prefHeight="526.0" prefWidth="200.0" />
             <Label layoutX="2.0" layoutY="4.0" prefHeight="39.0" prefWidth="199.0" text="To-Do-List" />
-            <Button fx:id="btnRemove" layoutX="56.0" layoutY="582.0" mnemonicParsing="false" prefWidth="75.0" text="Remove" />
+            <Button fx:id="btnRemove" layoutX="56.0" layoutY="582.0" mnemonicParsing="false" onAction="#remove" prefWidth="75.0" text="Remove" />
             <Label fx:id="errorToDo" layoutX="19.0" layoutY="617.0" prefHeight="21.0" prefWidth="159.0" />
          </children>
       </Pane>
@@ -54,10 +54,10 @@
    <center>
       <Pane prefHeight="647.0" prefWidth="896.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="ṕrojectView" layoutX="109.0" layoutY="32.0" prefHeight="402.0" prefWidth="670.0" />
-            <Button fx:id="btnAdd" layoutX="704.0" layoutY="468.0" mnemonicParsing="false" prefWidth="75.0" text="ADD" />
+            <TableView fx:id="projectView" layoutX="109.0" layoutY="32.0" prefHeight="402.0" prefWidth="670.0" />
+            <Button fx:id="btnAdd" layoutX="704.0" layoutY="468.0" mnemonicParsing="false" onAction="#add" prefWidth="75.0" text="ADD" />
             <Label fx:id="errorProject" layoutX="620.0" layoutY="442.0" prefHeight="21.0" prefWidth="159.0" />
-            <Button fx:id="btnUpdate" layoutX="619.0" layoutY="468.0" mnemonicParsing="false" prefWidth="75.0" text="Update" />
+            <Button fx:id="btnUpdate" layoutX="619.0" layoutY="468.0" mnemonicParsing="false" onAction="#update" prefWidth="75.0" text="Update" />
          </children>
       </Pane>
    </center>

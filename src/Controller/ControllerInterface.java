@@ -1,8 +1,10 @@
 package Controller;
 
+
 import PomodoroApp.ControllerName;
 import PomodoroApp.Main;
 import javafx.fxml.FXML;
+
 
 public interface ControllerInterface {
     @FXML
@@ -39,6 +41,7 @@ public interface ControllerInterface {
     }
     @FXML
     public default void logoutScene(){
-        System.out.println("ur logging out right now, bye bye!!!!");
+        Main.changeScene(ControllerName.Login);
     }
+
 }

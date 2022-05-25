@@ -1,5 +1,8 @@
 package PomodoroApp;
 
+import DB.DBHandler;
+import Data.DataHub;
+import ObjectTypes.Project;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -21,7 +24,7 @@ public class Main extends Application {
         FXMLLoader loginSearchLoader = new FXMLLoader(getClass().getResource("/GUI/FXLogin.fxml"));
         Parent loginSearchPane = loginSearchLoader.load();
         Scene loginSearchScene = new Scene(loginSearchPane,480,400);
-    
+
         FXMLLoader toDoListLoader = new FXMLLoader(getClass().getResource("/GUI/FXToDoList.fxml"));
         Parent toDoListPane = toDoListLoader.load();
         Scene toDoListScene = new Scene(toDoListPane,1200,700);
@@ -64,6 +67,14 @@ public class Main extends Application {
         sceneControllers.add(new SceneController(pomodoroStartScene,ControllerName.PomodoroStart));
         sceneControllers.add(new SceneController(pomodoroProScene,ControllerName.PomodoroProgress));
 
+        stage.setOnCloseRequest(windowEvent -> {
+            for (Project p : DataHub.getToDoList()){
+                DBHandler.freeTask(p.getTaskId());
+            }
+            DataHub.getToDoList().clear();
+            DBHandler.disconnect();
+            System.exit(1);
+        });
         stage.setResizable(false);
         stage.setScene(loginSearchScene);
         stage.setTitle("Login");
