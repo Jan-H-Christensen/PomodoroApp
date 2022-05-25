@@ -30,7 +30,7 @@ public class LoginController{
             errorText.setText("Wrong username or password");
         }
     }
-    
+
     public void toDoListScene() {
         Main.changeScene(ControllerName.ToDoList);
     }
