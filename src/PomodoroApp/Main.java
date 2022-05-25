@@ -75,6 +75,17 @@ public class Main extends Application {
             DBHandler.disconnect();
             System.exit(1);
         });
+
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            if (!DataHub.getToDoList().isEmpty()){
+                for (Project p : DataHub.getToDoList()){
+                    DBHandler.freeTask(p.getTaskId());
+                }
+                DataHub.getToDoList().clear();
+                DBHandler.disconnect();
+            }
+        }));
+        
         stage.setResizable(false);
         stage.setScene(loginSearchScene);
         stage.setTitle("Login");
