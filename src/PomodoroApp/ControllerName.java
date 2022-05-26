@@ -9,5 +9,7 @@ public enum ControllerName {
     PomodoroProgress,
     Login,
     Project,
-    ToDoList
+    ToDoList,
+
+    Settings
 }

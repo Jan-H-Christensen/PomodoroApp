@@ -66,4 +66,8 @@ public class AdminController extends Controller{
         super.pomodoroProgressScene();
     }
 
+    @Override
+    public void settingsScene() {
+        super.settingsScene();
+    }
 }

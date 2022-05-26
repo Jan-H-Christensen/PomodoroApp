@@ -1,15 +1,17 @@
 package Controller;
 
-public class PomodoroController extends Controller{
+import PomodoroApp.Main;
+import javafx.fxml.FXML;
+import javafx.scene.control.CheckBox;
+
+public class SettingsController extends Controller{
+
+    @FXML
+    public CheckBox darkMode;
 
     @Override
     public void initialize() {
         super.initialize();
-    }
-
-    @Override
-    public void remove() {
-        super.remove();
     }
 
     @Override
@@ -35,11 +37,6 @@ public class PomodoroController extends Controller{
     @Override
     public void projectScene() {
         super.projectScene();
-    }
-
-    @Override
-    public void pomodoroProgressScene() {
-        super.pomodoroProgressScene();
     }
 
     @Override

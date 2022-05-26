@@ -12,7 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 
 public class Controller {
-    
+
     @FXML
     public TableView<Project> toDoList;
 
@@ -27,6 +27,8 @@ public class Controller {
 
         toDoList.getColumns().addAll(toDo1,toDo2);
         toDoList.itemsProperty().bind(DataHub.getToDoListProperty());
+
+
     }
     public void remove(){
         if (!toDoList.getSelectionModel().isEmpty()) {
@@ -82,6 +84,11 @@ public class Controller {
     public  void pomodoroProgressScene(){
         Main.changeScene(ControllerName.PomodoroProgress);
         Main.setSceneLocation();
+    }
+
+    @FXML
+    public  void settingsScene(){
+        Main.changeScene(ControllerName.Settings);
     }
     @FXML
     private void logoutScene(){

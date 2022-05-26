@@ -38,4 +38,8 @@ public class AdminDeleteCon extends Controller{
         super.projectScene();
     }
 
+    @Override
+    public void settingsScene() {
+        super.settingsScene();
+    }
 }

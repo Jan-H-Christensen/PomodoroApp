@@ -39,4 +39,8 @@ public class ProjectController extends Controller{
         super.projectScene();
     }
 
+    @Override
+    public void settingsScene() {
+        super.settingsScene();
+    }
 }

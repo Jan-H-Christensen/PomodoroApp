@@ -1,5 +1,6 @@
 package PomodoroApp;
 
+import Controller.SettingsController;
 import DB.DBHandler;
 import Data.DataHub;
 import ObjectTypes.Project;
@@ -18,6 +19,9 @@ public class Main extends Application {
     private static Rectangle2D screenBounds = Screen.getPrimary().getBounds();
     private static double screenX = screenBounds.getMaxX();
     private static double screenY = screenBounds.getMaxY();
+
+    private SettingsController settings;
+
     private static ArrayList<SceneController> sceneControllers = new ArrayList<>();
 
     private static Stage stageHandler;
@@ -29,10 +33,12 @@ public class Main extends Application {
         FXMLLoader loginSearchLoader = new FXMLLoader(getClass().getResource("/GUI/FXLogin.fxml"));
         Parent loginSearchPane = loginSearchLoader.load();
         Scene loginSearchScene = new Scene(loginSearchPane,480,400);
+        //loginSearchScene.getStylesheets().add("/AppStyle/DarkMode.css");
 
         FXMLLoader toDoListLoader = new FXMLLoader(getClass().getResource("/GUI/FXToDoList.fxml"));
         Parent toDoListPane = toDoListLoader.load();
         Scene toDoListScene = new Scene(toDoListPane,1200,700);
+        //toDoListScene.getStylesheets().add("/AppStyle/DarkMode.css");
 
         FXMLLoader projectLoader = new FXMLLoader(getClass().getResource("/GUI/FXProject.fxml"));
         Parent projectPane = projectLoader.load();
@@ -62,6 +68,10 @@ public class Main extends Application {
         Parent adminEditPane = adminEditLoader.load();
         Scene adminEditScene = new Scene(adminEditPane,1200,700);
 
+        FXMLLoader settingLoader = new FXMLLoader(getClass().getResource("/GUI/FXSettings.fxml"));
+        Parent settingPane = settingLoader.load();
+        Scene settingsScene = new Scene(settingPane,1200,700);
+
         sceneControllers.add(new SceneController(loginSearchScene,ControllerName.Login));
         sceneControllers.add(new SceneController(toDoListScene,ControllerName.ToDoList));
         sceneControllers.add(new SceneController(projectScene,ControllerName.Project));
@@ -71,6 +81,7 @@ public class Main extends Application {
         sceneControllers.add(new SceneController(adminEditScene,ControllerName.AdminEdit));
         sceneControllers.add(new SceneController(pomodoroStartScene,ControllerName.PomodoroStart));
         sceneControllers.add(new SceneController(pomodoroProScene,ControllerName.PomodoroProgress));
+        sceneControllers.add(new SceneController(settingsScene,ControllerName.Settings));
 
         stage.setOnCloseRequest(windowEvent -> {
             for (Project p : DataHub.getToDoList()){
@@ -91,6 +102,7 @@ public class Main extends Application {
             }
         }));
 
+        
         stage.setResizable(false);
         stage.setScene(loginSearchScene);
         setSceneLocation();
@@ -103,7 +115,6 @@ public class Main extends Application {
         stageHandler.setTitle(sceneName.toString());
 
         for(SceneController sceneConPairName : sceneControllers){
-
             if(sceneConPairName.getName().equals(sceneName)){
                 stageHandler.setScene(sceneConPairName.getScene());
                 stageHandler.setTitle(sceneConPairName.getName().toString());
@@ -111,15 +122,11 @@ public class Main extends Application {
         }
     }
     public static void setSceneLocation(){
-
         setStageLocation((screenX/2)-(stageHandler.getScene().getWidth()/2),(screenY/2)-(stageHandler.getScene().getHeight()/2));
-
     }
 
     public static void setStageLocation(double x, double y){
-
         stageHandler.setX(x);
         stageHandler.setY(y);
-
     }
 }

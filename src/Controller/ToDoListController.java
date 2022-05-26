@@ -98,4 +98,8 @@ public class ToDoListController extends Controller{
         super.projectScene();
     }
 
+    @Override
+    public void settingsScene() {
+        super.settingsScene();
+    }
 }

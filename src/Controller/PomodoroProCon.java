@@ -32,4 +32,8 @@ public class PomodoroProCon extends Controller{
         super.PomodoroStartScene();
     }
 
+    @Override
+    public void settingsScene() {
+        super.settingsScene();
+    }
 }
