@@ -7,11 +7,11 @@
 }
 
 .label{
-    -fx-text-fill: lightgray;
+    -fx-text-fill: black;
 }
 
 .text-field {
-    -fx-prompt-text-fill: gray;
+    -fx-prompt-text-fill: black;
 }
 
 .titulo{
@@ -24,7 +24,7 @@
 }
 
 .button:hover{
-    -fx-text-fill: white;
+    -fx-text-fill: black;
 }
 
 .separator *.line {
