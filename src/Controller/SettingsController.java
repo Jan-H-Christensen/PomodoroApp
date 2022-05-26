@@ -13,15 +13,14 @@ public class SettingsController extends Controller{
     @Override
     public void initialize() {
         super.initialize();
-
-
+        
         darkMode.selectedProperty().addListener((obs, wasSelected, isSelected) -> {
             if (isSelected) {
                 for(SceneController sceneStyle: Main.getSceneControllers()) {
                     sceneStyle.getScene().getStylesheets().remove("/AppStyle/LightMode.css");
                     sceneStyle.getScene().getStylesheets().add("/AppStyle/DarkMode.css");
                 }
-            } else {
+            } if(wasSelected) {
                 for(SceneController sceneStyle: Main.getSceneControllers()){
                     sceneStyle.getScene().getStylesheets().remove("/AppStyle/DarkMode.css");
                     sceneStyle.getScene().getStylesheets().add("/AppStyle/LightMode.css");
