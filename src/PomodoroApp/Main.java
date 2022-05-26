@@ -102,7 +102,7 @@ public class Main extends Application {
             }
         }));
 
-        
+
         stage.setResizable(false);
         stage.setScene(loginSearchScene);
         setSceneLocation();
@@ -128,5 +128,9 @@ public class Main extends Application {
     public static void setStageLocation(double x, double y){
         stageHandler.setX(x);
         stageHandler.setY(y);
+    }
+
+    public static ArrayList<SceneController> getSceneControllers() {
+        return sceneControllers;
     }
 }

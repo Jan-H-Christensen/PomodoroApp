@@ -1,6 +1,7 @@
 package Controller;
 
 import PomodoroApp.Main;
+import PomodoroApp.SceneController;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 
@@ -12,6 +13,21 @@ public class SettingsController extends Controller{
     @Override
     public void initialize() {
         super.initialize();
+
+
+        darkMode.selectedProperty().addListener((obs, wasSelected, isSelected) -> {
+            if (isSelected) {
+                for(SceneController sceneStyle: Main.getSceneControllers()) {
+                    sceneStyle.getScene().getStylesheets().remove("/AppStyle/LightMode.css");
+                    sceneStyle.getScene().getStylesheets().add("/AppStyle/DarkMode.css");
+                }
+            } else {
+                for(SceneController sceneStyle: Main.getSceneControllers()){
+                    sceneStyle.getScene().getStylesheets().remove("/AppStyle/DarkMode.css");
+                    sceneStyle.getScene().getStylesheets().add("/AppStyle/LightMode.css");
+                }
+            }
+        });
     }
 
     @Override
