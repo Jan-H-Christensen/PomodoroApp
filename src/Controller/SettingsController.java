@@ -13,7 +13,7 @@ public class SettingsController extends Controller{
     @Override
     public void initialize() {
         super.initialize();
-        
+
         darkMode.selectedProperty().addListener((obs, wasSelected, isSelected) -> {
             if (isSelected) {
                 for(SceneController sceneStyle: Main.getSceneControllers()) {
