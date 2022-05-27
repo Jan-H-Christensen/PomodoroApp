@@ -99,4 +99,14 @@ public class DBHandler {
         }
     }
 
+    public static void changePassword(int employeeID,String oldPassword,String newPassword,String confirmPassword){
+        try{
+            PreparedStatement ps = con.prepareStatement("exec changePassword "+employeeID+","+oldPassword+","+newPassword+","+confirmPassword);
+            ps.executeUpdate();
+            ps.close();
+        }catch (SQLException e){
+            System.err.println(e.getMessage());
+        }
+    }
+
 }

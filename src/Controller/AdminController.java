@@ -1,13 +1,5 @@
 package Controller;
 
-import DB.DBHandler;
-import Data.DataHub;
-import ObjectTypes.Project;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 
 public class AdminController extends Controller{
 

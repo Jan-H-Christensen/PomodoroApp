@@ -1,12 +1,19 @@
 package Controller;
 
+import DB.DBHandler;
 import PomodoroApp.Main;
 import PomodoroApp.SceneController;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 
 public class SettingsController extends Controller{
 
+    @FXML
+    public Label username,currentPasswordError,newPasswordError,confirmPasswordError,message;
+    @FXML
+    public PasswordField currentPassword,newPassword,confirmPassword;
     @FXML
     public CheckBox darkMode;
 
@@ -27,6 +34,27 @@ public class SettingsController extends Controller{
                 }
             }
         });
+    }
+
+    @FXML
+    private void changePassword(){
+
+        if(newPassword.getText().equals(confirmPassword.getText())){
+            DBHandler.changePassword(1,currentPassword.getText(),newPassword.getText(),confirmPassword.getText());
+            clean();
+            message.setText("Password has been change");
+        }else {
+            confirmPasswordError.setText("confirm password matches not the new password");
+            newPasswordError.setText("new password matches not the confirm password");
+        }
+    }
+
+    private void clean(){
+        currentPassword.clear();
+        newPassword.clear();
+        confirmPassword.clear();
+        confirmPasswordError.setText("");
+        newPasswordError.setText("");
     }
 
     @Override
