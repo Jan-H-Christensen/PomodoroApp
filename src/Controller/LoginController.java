@@ -16,16 +16,14 @@ public class LoginController extends Controller{
     public void initialize() {
 
     }
-
     public void login(){
 
         boolean loginCheck = DBHandler.connect(username.getText(),password.getText());
 
-        username.clear();
         password.clear();
         if (loginCheck){
+            username.clear();
             errorText.setText("");
-            DBHandler.setProjects();
             super.toDoListScene();
         }
         else

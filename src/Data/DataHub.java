@@ -1,5 +1,6 @@
 package Data;
 
+import ObjectTypes.Employee;
 import ObjectTypes.Project;
 import javafx.beans.property.Property;
 import javafx.beans.property.SimpleListProperty;
@@ -27,5 +28,13 @@ public class DataHub {
     }
     public static Property<ObservableList<Project>> getToDoListProperty() {
         return toDoListProperty;
+    }
+
+    private static Employee employee = null;
+    public static Employee getEmployee() {
+        return employee;
+    }
+    public static void setEmployee(Employee employee) {
+        DataHub.employee = employee;
     }
 }

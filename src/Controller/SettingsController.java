@@ -1,6 +1,7 @@
 package Controller;
 
 import DB.DBHandler;
+import Data.DataHub;
 import PomodoroApp.Main;
 import PomodoroApp.SceneController;
 import javafx.fxml.FXML;
@@ -40,7 +41,7 @@ public class SettingsController extends Controller{
     private void changePassword(){
 
         if(newPassword.getText().equals(confirmPassword.getText())){
-            DBHandler.changePassword(1,currentPassword.getText(),newPassword.getText(),confirmPassword.getText());
+            DBHandler.changePassword(DataHub.getEmployee().getEmpID(),currentPassword.getText(),newPassword.getText(),confirmPassword.getText());
             clean();
             message.setText("Password has been change");
         }else {

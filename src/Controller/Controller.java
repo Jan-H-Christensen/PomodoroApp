@@ -6,12 +6,14 @@ import ObjectTypes.Project;
 import PomodoroApp.ControllerName;
 import PomodoroApp.Main;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 
 public class Controller {
+
 
     @FXML
     public TableView<Project> toDoList;
@@ -42,6 +44,8 @@ public class Controller {
         }
         DataHub.getToDoList().clear();
         DBHandler.disconnect();
+        DataHub.setEmployee(null);
+        //&btnAdmin.setDisable(true);
         logoutScene();
     }
     @FXML
@@ -52,8 +56,17 @@ public class Controller {
     }
     @FXML
     public  void adminStartScene(){
-        Main.changeScene(ControllerName.AdminStart);
-        Main.setSceneLocation();
+        if (DataHub.getEmployee().getRank().equalsIgnoreCase("ADMIN")) {
+            Main.changeScene(ControllerName.AdminStart);
+            Main.setSceneLocation();
+        }
+        else
+        {
+            Alert a = new Alert(Alert.AlertType.NONE);
+            a.setAlertType(Alert.AlertType.WARNING);
+            a.setContentText("YOU ARE NOT A ADMIN\nYOU ACCESS TRY WILL BE RECORDED");
+            a.show();
+        }
     }
     @FXML
     public  void PomodoroStartScene(){
