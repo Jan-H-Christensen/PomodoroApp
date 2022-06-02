@@ -1,7 +1,8 @@
 .root {
     -fx-accent: #1e74c6;
     -fx-focus-color: -fx-accent;
-    -fx-base: lightblue;
+
+    -fx-background-color: radial-gradient(radius 180%, rgba(63,251,179,1) 0%, rgba(252,70,107,1) 100%);
     -fx-control-inner-background: derive(-fx-base, 35%);
     -fx-control-inner-background-alt: -fx-control-inner-background ;
 }
@@ -38,6 +39,7 @@
 
 .table-view{
     /*-fx-background-color: derive(-fx-base, 10%);*/
+    /*-fx-background-color: radial-gradient(radius 180%, rgba(63,251,179,1) 0%, rgba(252,70,107,1) 100%);*/
     -fx-selection-bar-non-focused: derive(-fx-base, 50%);
 }
 

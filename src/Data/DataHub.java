@@ -20,6 +20,17 @@ public class DataHub {
     }
 
 
+
+    private static int listenerChecker = 0;
+    public static int getListenerChecker() {
+        return listenerChecker;
+    }
+    public static void setListenerChecker(int listenerChecker) {
+        DataHub.listenerChecker = listenerChecker;
+    }
+
+
+
     private static ObservableList<Project> toDoList = FXCollections.observableArrayList();
     private static Property<ObservableList<Project>> toDoListProperty = new SimpleListProperty<>(toDoList);
 
@@ -30,11 +41,4 @@ public class DataHub {
         return toDoListProperty;
     }
 
-    private static Employee employee = null;
-    public static Employee getEmployee() {
-        return employee;
-    }
-    public static void setEmployee(Employee employee) {
-        DataHub.employee = employee;
-    }
 }

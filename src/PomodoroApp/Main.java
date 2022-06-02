@@ -3,6 +3,7 @@ package PomodoroApp;
 import Controller.SettingsController;
 import DB.DBHandler;
 import Data.DataHub;
+import ObjectTypes.Config;
 import ObjectTypes.Project;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -19,8 +20,6 @@ public class Main extends Application {
     private static Rectangle2D screenBounds = Screen.getPrimary().getBounds();
     private static double screenX = screenBounds.getMaxX();
     private static double screenY = screenBounds.getMaxY();
-
-    private SettingsController settings;
 
     private static ArrayList<SceneController> sceneControllers = new ArrayList<>();
 
@@ -92,10 +91,12 @@ public class Main extends Application {
         sceneControllers.add(new SceneController(settingsScene,ControllerName.Settings));
 
         stage.setOnCloseRequest(windowEvent -> {
-            for (Project p : DataHub.getToDoList()){
-                DBHandler.freeTask(p.getTaskId());
+            if (!DataHub.getToDoList().isEmpty()) {
+                for (Project p : DataHub.getToDoList()) {
+                    DBHandler.freeTask(p.getTaskId());
+                }
+                DataHub.getToDoList().clear();
             }
-            DataHub.getToDoList().clear();
             DBHandler.disconnect();
             System.exit(1);
         });
@@ -106,10 +107,9 @@ public class Main extends Application {
                     DBHandler.freeTask(p.getTaskId());
                 }
                 DataHub.getToDoList().clear();
-                DBHandler.disconnect();
             }
+            DBHandler.disconnect();
         }));
-
 
         stage.setResizable(false);
         stage.setScene(loginSearchScene);

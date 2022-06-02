@@ -20,7 +20,7 @@ public class ProjectController extends Controller{
     public void createProject(){
         final int createdProjectCheck = 0;
         final int standardNumberWorkOn = 1;
-        final String standardStatus = "0";
+        final String standardStatus = "Free";
 
         if(name.getText().isEmpty()){
             name.clear();
@@ -35,7 +35,7 @@ public class ProjectController extends Controller{
         {
             nameError.setText("");
 
-            if (time.getText().matches("\\d*")){
+            if (time.getText().matches("\\d*") && !time.getText().isEmpty()){
                 DataHub.getToDoList().add(
                         new Project(createdProjectCheck,Integer.parseInt(time.getText()),standardNumberWorkOn,name.getText(),standardStatus));
 
@@ -88,10 +88,4 @@ public class ProjectController extends Controller{
     public void projectScene() {
         super.projectScene();
     }
-
-    @Override
-    public void settingsScene() {
-        super.settingsScene();
-    }
 }
-

@@ -1,81 +1,75 @@
 package ObjectTypes;
 
-import DB.DBHandler;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 public class Employee {
-    private int empID;
-    private String name;
-    private String eMail;
-    private int phoneNo;
-    private String address;
-    private String department;
-    private String rank;
+    private static int empID;
+    private static String name;
+    private static String eMail;
+    private static int phoneNo;
+    private static String address;
+    private static String department;
+    private static String rank;
+    private static StringProperty rankProperty = new SimpleStringProperty("");
 
-    public Employee(int empID, String name, String eMail, int phoneNo, String address, String department, String rank) {
-        setEmpID(empID);
-        setName(name);
-        seteMail(eMail);
-        setPhoneNo(phoneNo);
-        setAddress(address);
-        setDepartment(department);
-        setRank(rank);
-    }
-
-    public int getEmpID() {
+    public static int getEmpID() {
         return empID;
     }
 
-    private void setEmpID(int empID) {
-        this.empID = empID;
+    public static void setEmpID(int empID1) {
+        empID = empID1;
     }
 
-    public String getName() {
+    public static String getName() {
         return name;
     }
 
-    private void setName(String name) {
-        this.name = name;
-    }
+    public static void setName(String name1) {name = name1;}
 
-    public String geteMail() {
+    public static String getMail() {
         return eMail;
     }
 
-    private void seteMail(String eMail) {
-        this.eMail = eMail;
+    public static void setMail(String eMail1) {
+        eMail = eMail1;
     }
 
-    public int getPhoneNo() {
+    public static int getPhoneNo() {
         return phoneNo;
     }
 
-    private void setPhoneNo(int phoneNo) {
-        this.phoneNo = phoneNo;
+    public static void setPhoneNo(int phoneNo1) {
+        phoneNo = phoneNo1;
     }
 
-    public String getAddress() {
+    public static String getAddress() {
         return address;
     }
 
-    private void setAddress(String address) {
-        this.address = address;
+    public static void setAddress(String address1) {
+        address = address1;
     }
 
-    public String getDepartment() {
+    public static String getDepartment() {
         return department;
     }
 
-    private void setDepartment(String department) {
-        this.department = department;
+    public static void setDepartment(String department1) {
+        department = department1;
     }
 
-    public String getRank() {
+    public static StringProperty getRankProperty() {
+        return rankProperty;
+    }
+
+    public static String getRank(){
         return rank;
     }
 
-    private void setRank(String rank) {
-        this.rank = rank;
-        //DBHandler.controllerInterface.checkRank();
+    public static void setRank(String rank1) {
+        rank =rank1;
+        rankProperty.set(rank1);
     }
 
 }

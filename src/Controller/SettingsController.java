@@ -2,21 +2,27 @@ package Controller;
 
 import DB.DBHandler;
 import Data.DataHub;
+import ObjectTypes.Config;
+import ObjectTypes.Employee;
 import PomodoroApp.Main;
 import PomodoroApp.SceneController;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 
 public class SettingsController extends Controller{
 
     @FXML
-    public Label username,currentPasswordError,newPasswordError,confirmPasswordError,message;
+    public Label currentPasswordError,newPasswordError,confirmPasswordError,message;
     @FXML
     public PasswordField currentPassword,newPassword,confirmPassword;
     @FXML
     public CheckBox darkMode;
+
+    @FXML
+    public TextField username;
 
     @Override
     public void initialize() {
@@ -38,24 +44,33 @@ public class SettingsController extends Controller{
     }
 
     @FXML
+
     private void changePassword(){
 
-        if(newPassword.getText().equals(confirmPassword.getText())){
-            DBHandler.changePassword(DataHub.getEmployee().getEmpID(),currentPassword.getText(),newPassword.getText(),confirmPassword.getText());
-            clean();
-            message.setText("Password has been change");
-        }else {
-            confirmPasswordError.setText("confirm password matches not the new password");
-            newPasswordError.setText("new password matches not the confirm password");
+        boolean userCheck = DBHandler.passwordCheck(username.getText(),currentPassword.getText());
+
+        if(userCheck) {
+            if (newPassword.getText().equals(confirmPassword.getText())) {
+                DBHandler.changePassword(Employee.getEmpID(), currentPassword.getText(), newPassword.getText(), confirmPassword.getText());
+                clean();
+                message.setText("Password has been change");
+            } else {
+                confirmPasswordError.setText("confirm password matches not the new password");
+                newPasswordError.setText("new password matches not the confirm password");
+            }
+        }else{
+            currentPasswordError.setText("Wrong username or password");
         }
     }
 
+    @FXML
     private void clean(){
         currentPassword.clear();
         newPassword.clear();
         confirmPassword.clear();
         confirmPasswordError.setText("");
         newPasswordError.setText("");
+        currentPasswordError.setText("");
     }
 
     @Override
@@ -86,5 +101,11 @@ public class SettingsController extends Controller{
     @Override
     public void settingsScene() {
         super.settingsScene();
+    }
+
+    @FXML
+    public void saveSettings(){
+        Config config = new Config(this);
+        config.saveSettings();
     }
 }

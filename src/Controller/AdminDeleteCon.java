@@ -1,6 +1,10 @@
 package Controller;
 
 
+import DB.DBHandler;
+import ObjectTypes.Employee;
+import javafx.fxml.FXML;
+
 public class AdminDeleteCon extends Controller{
 
     @Override
@@ -42,4 +46,11 @@ public class AdminDeleteCon extends Controller{
     public void settingsScene() {
         super.settingsScene();
     }
+    /*
+    @FXML
+    public void findUser(){
+        Employee employee = DBHandler.findUser(serchID.getText);
+    }
+
+     */
 }

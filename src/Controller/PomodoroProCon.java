@@ -1,10 +1,24 @@
 package Controller;
 
+import ObjectTypes.Pomodoro;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+
 public class PomodoroProCon extends Controller{
+
+    @FXML
+    public Label name,estimateTime,EstimatedPomodoro,status,workTime,breakTime,currentPomodoro;
 
     @Override
     public void initialize() {
         super.initialize();
+        name.textProperty().bindBidirectional(Pomodoro.namePropertyProperty());
+        estimateTime.textProperty().bindBidirectional(Pomodoro.estimateTimePropertyProperty());
+        EstimatedPomodoro.textProperty().bindBidirectional(Pomodoro.estimatePomodoroPropertyProperty());
+        status.textProperty().bindBidirectional(Pomodoro.statusPropertyProperty());
+        workTime.textProperty().bindBidirectional(Pomodoro.workTimePropertyProperty());
+        breakTime.textProperty().bindBidirectional(Pomodoro.breakTImePropertyProperty());
+        currentPomodoro.setText("0");
     }
 
     @Override
