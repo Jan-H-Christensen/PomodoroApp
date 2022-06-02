@@ -261,4 +261,31 @@ public class DBHandler {
         }
     }
 
+    public static boolean createConsultant(String name, String userEmail, int userPhone,String userAddress ,  String userDepartment, String username, String password) {
+
+        try {
+            int check = 0;
+            PreparedStatement ps = con.prepareStatement("exec checkUsername '"+username+"'");
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()){
+                check++;
+            }
+            if(check <= 0){
+                try{
+                    PreparedStatement pst = con.prepareStatement("exec createConsultent '"+name+"','"+userEmail+"',"+userPhone+",'"+userAddress+"','"+userDepartment+"','"+username+"','"+password+"'");
+                    pst.executeUpdate();
+                    return true;
+                } catch (SQLException ex) {
+                    System.err.println(ex.getMessage());
+                    return false;
+                }
+            }else {
+                return false;
+            }
+        }catch (SQLException e){
+            System.err.println(e.getMessage());
+            return false;
+        }
+    }
 }

@@ -55,23 +55,34 @@
    <center>
       <Pane prefHeight="647.0" prefWidth="896.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="653.0" layoutY="369.0" mnemonicParsing="false" text="Cancel" />
-            <Button layoutX="539.0" layoutY="369.0" mnemonicParsing="false" text="Create" />
-            <Label layoutX="538.0" layoutY="184.0" text="Phone" />
-            <TextField layoutX="538.0" layoutY="205.0" />
-            <Label layoutX="538.0" layoutY="261.0" text="Department" />
-            <TextField layoutX="538.0" layoutY="282.0" />
-            <Label layoutX="538.0" layoutY="313.0" text="error" />
-            <Label layoutX="539.0" layoutY="236.0" text="error" />
-            <Label layoutX="146.0" layoutY="183.0" text="Name" />
-            <TextField layoutX="146.0" layoutY="204.0" />
-            <Label layoutX="146.0" layoutY="337.0" text="Address" />
-            <TextField layoutX="146.0" layoutY="358.0" />
-            <Label layoutX="146.0" layoutY="389.0" text="error" />
-            <Label layoutX="146.0" layoutY="261.0" text="E-Mail" />
-            <TextField layoutX="146.0" layoutY="282.0" />
-            <Label layoutX="147.0" layoutY="313.0" text="error" />
-            <Label layoutX="147.0" layoutY="235.0" text="error" />
+            <Button layoutX="577.0" layoutY="432.0" mnemonicParsing="false" onAction="#clear" text="Cancel" />
+            <Button layoutX="456.0" layoutY="432.0" mnemonicParsing="false" onAction="#createConsultant" text="Create" />
+            <Label layoutX="144.0" layoutY="334.0" text="Phone" />
+            <TextField fx:id="phone" layoutX="144.0" layoutY="355.0" />
+            <Label layoutX="144.0" layoutY="411.0" text="Department" />
+            <TextField fx:id="department" layoutX="144.0" layoutY="432.0" />
+            <Label fx:id="departmentError" layoutX="144.0" layoutY="463.0" text="error" />
+            <Label fx:id="phoneError" layoutX="145.0" layoutY="386.0" text="error" />
+            <Label layoutX="144.0" layoutY="97.0" text="Name" />
+            <TextField fx:id="name" layoutX="144.0" layoutY="118.0" />
+            <Label layoutX="144.0" layoutY="251.0" text="Address" />
+            <TextField fx:id="address" layoutX="144.0" layoutY="272.0" />
+            <Label fx:id="addressError" layoutX="144.0" layoutY="303.0" text="error" />
+            <Label layoutX="144.0" layoutY="175.0" text="E-Mail" />
+            <TextField fx:id="email" layoutX="144.0" layoutY="196.0" />
+            <Label fx:id="emailError" layoutX="145.0" layoutY="227.0" text="error" />
+            <Label fx:id="nameError" layoutX="145.0" layoutY="149.0" text="error" />
+            <Label layoutX="463.0" layoutY="197.0" text="Username" />
+            <TextField fx:id="username" layoutX="463.0" layoutY="218.0" />
+            <Label layoutX="463.0" layoutY="275.0" text="Password" />
+            <TextField fx:id="password" layoutX="463.0" layoutY="296.0" />
+            <Label fx:id="passwordError" layoutX="464.0" layoutY="327.0" text="error" />
+            <Label fx:id="usernameError" layoutX="464.0" layoutY="249.0" text="error" />
+            <Label fx:id="message" alignment="CENTER" layoutX="456.0" layoutY="376.0" prefHeight="31.0" prefWidth="183.0">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </center>
