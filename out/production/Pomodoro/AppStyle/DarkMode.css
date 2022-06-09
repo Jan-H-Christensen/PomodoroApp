@@ -1,44 +1,133 @@
-.root {
-    -fx-accent: #1e74c6;
-    -fx-focus-color: -fx-accent;
-    -fx-base: #373e43;
-    -fx-control-inner-background: derive(-fx-base, 35%);
-    -fx-control-inner-background-alt: -fx-control-inner-background ;
+
+.root{
+    -fx-accent: #000000;
+    -fx-hoverColor: #000000;
+    -fx-standartText: #ffffff;
+    -fx-textHover: #ffffff;
+    -fx-base: -fx-accent;
+    -fx-background-color: derive(-fx-base,45%)
 }
 
 .label{
-    -fx-text-fill: lightgray;
+    -fx-font-size: 14;
+    -fx-font-family: "Lucida Handwriting";
+}
+
+#headline{
+    -fx-font-size: 36;
+    -fx-font-width: bold;
+    -fx-text-fill: -fx-standartText;
+    fx-base: -fx-accent;
+    -fx-background-color: derive(-fx-base,20%)
+}
+
+#availableProjects{
+    -fx-font-size: 23;
+    -fx-font-width: bold;
+
+}
+
+#lbToDoList{
+    -fx-font-size: 23;
+    -fx-font-width: bold;
+    -fx-text-fill: -fx-standartText;
+    fx-base: -fx-accent;
+    -fx-background-color: derive(-fx-base,20%)
 }
 
 .text-field {
-    -fx-prompt-text-fill: gray;
+    -fx-prompt-text-fill: -fx-textHover;
 }
 
 .button{
     -fx-focus-traversable: false;
+    -fx-text-fill: -fx-standartText;
+    -fx-base: -fx-accent;
+    -fx-background-color: derive(-fx-base,20%);
+    -fx-background-radius: 0;
+}
+
+#btnToDoList:hover{
+    -f-fx-base: -fx-accent;
+    -fx-background-color: derive(-fx-base,55%);
+    -fx-text-fill: -fx-standartText;
+    -fx-effect: innershadow(two-pass-box, -fx-accent,100,0.25,0,0);
+}
+
+#btnAdmin:hover{
+    -f-fx-base: -fx-accent;
+    -fx-background-color: derive(-fx-base,55%);
+    -fx-text-fill: -fx-textHover;
+    -fx-effect: innershadow(two-pass-box, -fx-accent,100,0.25,0,0);
+}
+
+#btnLogout:hover{
+    -f-fx-base: -fx-accent;
+    -fx-background-color: derive(-fx-base,55%);
+    -fx-text-fill: -fx-textHover;
+    -fx-effect: innershadow(two-pass-box, -fx-accent,100,0.25,0,0);
+}
+
+#btnSettings:hover{
+    -f-fx-base: -fx-accent;
+    -fx-background-color: derive(-fx-base,55%);
+    -fx-text-fill: -fx-textHover;
+    -fx-effect: innershadow(two-pass-box, -fx-accent,100,0.25,0,0);
+}
+
+
+#btnPomodoro:hover{
+    -f-fx-base: -fx-accent;
+    -fx-background-color: derive(-fx-base,55%);
+    -fx-text-fill: -fx-textHover;
+    -fx-effect: innershadow(two-pass-box, -fx-accent,100,0.25,0,0);
+}
+
+#btnProject:hover{
+    -f-fx-base: -fx-accent;
+    -fx-background-color: derive(-fx-base,55%);
+    -fx-text-fill: -fx-textHover;
+    -fx-effect: innershadow(two-pass-box, -fx-accent,100,0.25,0,0);
 }
 
 .button:hover{
-    -fx-text-fill: white;
+    --f-fx-base: -fx-accent;
+    -fx-background-color: derive(-fx-base,55%);
+    -fx-text-fill: -fx-textHover;
+    -fx-effect: innershadow(gaussian, -fx-accent,35,0.3,0,0);
 }
 
-.separator *.line {
-    -fx-background-color: #3C3C3C;
-    -fx-border-style: solid;
-    -fx-border-width: 1px;
-}
-
-.scroll-bar{
-    -fx-background-color: derive(-fx-base,45%)
+#btnRemove:hover{
+    -f-fx-base: -fx-accent;
+    -fx-background-color: derive(-fx-base,55%);
+    -fx-text-fill: -fx-textHover;
+    -fx-effect: innershadow(two-pass-box, -fx-accent,100,0.25,0,0);
 }
 
 .button:default {
     -fx-base: -fx-accent ;
 }
 
+.separator *.line {
+    -f-fx-base: -fx-accent;
+    -fx-background-color: derive(-fx-base,55%);
+    -fx-border-style: solid;
+    -fx-border-width: 1px;
+}
+
+.scroll-bar{
+    -fx-base: -fx-accent;
+    -fx-background-color: derive(-fx-base,50%)
+}
+
 .table-view{
-    /*-fx-background-color: derive(-fx-base, 10%);*/
-    -fx-selection-bar-non-focused: derive(-fx-base, 50%);
+    -fx-base: -fx-accent;
+    -fx-background-color: derive(-fx-base,50%)
+}
+
+#toDoList{
+    -fx-base: -fx-accent;
+    -fx-background-color: derive(-fx-base,50%)
 }
 
 .table-view .column-header .label{
@@ -50,7 +139,8 @@
 .list-cell:odd,
 .table-row-cell:even,
 .table-row-cell:odd{
-    -fx-control-inner-background: derive(-fx-base, 15%);
+    -fx-base: -fx-accent;
+    -fx-control-inner-background: derive(-fx-base, 85%);
 }
 
 .list-cell:empty,
