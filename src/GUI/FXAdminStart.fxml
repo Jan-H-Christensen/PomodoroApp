@@ -12,7 +12,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminController">
    <left>
-      <GridPane prefHeight="468.0" prefWidth="113.0" BorderPane.alignment="CENTER">
+      <GridPane prefHeight="550.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
@@ -25,38 +25,45 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="btnToDoList" mnemonicParsing="false" onAction="#toDoListScene" prefHeight="137.0" prefWidth="149.0" text="To-Do-List" />
-            <Button fx:id="btnPomodoro" mnemonicParsing="false" onAction="#PomodoroStartScene" prefHeight="137.0" prefWidth="149.0" text="Pomodoro" GridPane.rowIndex="2" />
-            <Button fx:id="btnProject" mnemonicParsing="false" onAction="#projectScene" prefHeight="137.0" prefWidth="149.0" text="Project" GridPane.rowIndex="1" />
-            <Button fx:id="btnAdmin" mnemonicParsing="false" prefHeight="137.0" prefWidth="149.0" text="Admin" GridPane.rowIndex="3" />
-            <Button fx:id="btnLogout" mnemonicParsing="false" onAction="#logOut" prefHeight="137.0" prefWidth="149.0" text="Logout" GridPane.rowIndex="4" />
-            <Button fx:id="btnSettings" mnemonicParsing="false" onAction="#settingsScene" prefHeight="137.0" prefWidth="149.0" text="Setting" GridPane.rowIndex="5" />
+            <Button fx:id="btnToDoList" mnemonicParsing="false" onAction="#toDoListScene" prefHeight="92.0" prefWidth="200.0" text="To-Do-List" />
+            <Button fx:id="btnPomodoro" mnemonicParsing="false" onAction="#PomodoroStartScene" prefHeight="92.0" prefWidth="200.0" text="Pomodoro" GridPane.rowIndex="2" />
+            <Button fx:id="btnProject" mnemonicParsing="false" onAction="#projectScene" prefHeight="92.0" prefWidth="200.0" text="Project" GridPane.rowIndex="1" />
+            <Button fx:id="btnAdmin" mnemonicParsing="false" prefHeight="92.0" prefWidth="200.0" text="Admin" GridPane.rowIndex="3" />
+            <Button fx:id="btnLogout" mnemonicParsing="false" onAction="#logOut" prefHeight="91.0" prefWidth="200.0" text="Logout" GridPane.rowIndex="4" />
+            <Button fx:id="btnSettings" mnemonicParsing="false" onAction="#settingsScene" prefHeight="91.0" prefWidth="200.0" text="Setting" GridPane.rowIndex="5" />
          </children>
       </GridPane>
    </left>
    <top>
-      <Label fx:id="headline" text="Test" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
+      <Pane BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="headline" alignment="CENTER" prefHeight="150.0" prefWidth="1200.0" text="Admin Section">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnMinimize" layoutX="1170.0" mnemonicParsing="false" onAction="#minimize" prefHeight="30.0" prefWidth="30.0" text="-" />
+         </children>
+      </Pane>
    </top>
    <right>
       <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="toDoList" layoutY="47.0" prefHeight="526.0" prefWidth="200.0" />
-            <Label layoutX="2.0" layoutY="4.0" prefHeight="39.0" prefWidth="199.0" text="To-Do-List" />
-            <Button fx:id="btnRemove" layoutX="56.0" layoutY="582.0" mnemonicParsing="false" onAction="#remove" prefWidth="75.0" text="Remove" />
-            <Label fx:id="errorToDo" layoutX="19.0" layoutY="617.0" prefHeight="21.0" prefWidth="159.0" />
+            <TableView fx:id="toDoList" layoutY="50.0" prefHeight="450.0" prefWidth="200.0" />
+            <Label fx:id="lbToDoList" alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="To-Do-List">
+               <font>
+                  <Font size="23.0" />
+               </font></Label>
+            <Button fx:id="btnRemove" layoutY="500.0" mnemonicParsing="false" onAction="#remove" prefHeight="50.0" prefWidth="200.0" text="Remove" />
          </children>
       </Pane>
    </right>
    <center>
       <Pane prefHeight="647.0" prefWidth="896.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btnCreate" layoutX="188.0" layoutY="126.0" mnemonicParsing="false" onAction="#adminCreateScene" text="NEW USER" />
-            <Button fx:id="btnEdit" layoutX="188.0" layoutY="186.0" mnemonicParsing="false" onAction="#adminEditScene" text="EDIT USER" />
-            <Button fx:id="btnDelete" layoutX="188.0" layoutY="248.0" mnemonicParsing="false" onAction="#adminDeleteScene" text="DELETE USER" />
+            <Button fx:id="btnCreate" layoutX="275.0" layoutY="199.0" mnemonicParsing="false" onAction="#adminCreateScene" prefWidth="250.0" text="NEW USER" />
+            <Button fx:id="btnEdit" layoutX="275.0" layoutY="259.0" mnemonicParsing="false" onAction="#adminEditScene" prefWidth="250.0" text="EDIT USER" />
+            <Button fx:id="btnDelete" layoutX="275.0" layoutY="321.0" mnemonicParsing="false" onAction="#adminDeleteScene" prefWidth="250.0" text="DELETE USER" />
          </children>
       </Pane>
    </center>

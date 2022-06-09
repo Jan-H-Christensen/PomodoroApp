@@ -1,9 +1,7 @@
 package PomodoroApp;
 
-import Controller.SettingsController;
 import DB.DBHandler;
 import Data.DataHub;
-import ObjectTypes.Config;
 import ObjectTypes.Project;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.util.ArrayList;
 
@@ -31,53 +30,54 @@ public class Main extends Application {
 
         FXMLLoader loginSearchLoader = new FXMLLoader(getClass().getResource("/GUI/FXLogin.fxml"));
         Parent loginSearchPane = loginSearchLoader.load();
-        Scene loginSearchScene = new Scene(loginSearchPane,480,400);
-        loginSearchScene.getStylesheets().add("/AppStyle/LightMode.css");
+        Scene loginSearchScene = new Scene(loginSearchPane,450,400);
+        loginSearchScene.getStylesheets().add("/AppStyle/BlueStyle.css");
+
 
         FXMLLoader toDoListLoader = new FXMLLoader(getClass().getResource("/GUI/FXToDoList.fxml"));
         Parent toDoListPane = toDoListLoader.load();
         Scene toDoListScene = new Scene(toDoListPane,1200,700);
-        toDoListScene.getStylesheets().add("/AppStyle/LightMode.css");
+        toDoListScene.getStylesheets().add("/AppStyle/BlueStyle.css");
 
         FXMLLoader projectLoader = new FXMLLoader(getClass().getResource("/GUI/FXProject.fxml"));
         Parent projectPane = projectLoader.load();
         Scene projectScene = new Scene(projectPane,1200,700);
-        projectScene.getStylesheets().add("/AppStyle/LightMode.css");
+        projectScene.getStylesheets().add("/AppStyle/BlueStyle.css");
 
         FXMLLoader pomodoroStartLoader = new FXMLLoader(getClass().getResource("/GUI/FXPomodoroStart.fxml"));
         Parent pomodoroStartPane = pomodoroStartLoader.load();
         Scene pomodoroStartScene = new Scene(pomodoroStartPane,1200,700);
-        pomodoroStartScene.getStylesheets().add("/AppStyle/LightMode.css");
+        pomodoroStartScene.getStylesheets().add("/AppStyle/BlueStyle.css");
 
         FXMLLoader pomodoroProLoader = new FXMLLoader(getClass().getResource("/GUI/FXPomodoroProgress.fxml"));
         Parent pomodoroProPane = pomodoroProLoader.load();
         Scene pomodoroProScene = new Scene(pomodoroProPane,1200,700);
-        pomodoroProScene.getStylesheets().add("/AppStyle/LightMode.css");
+        pomodoroProScene.getStylesheets().add("/AppStyle/BlueStyle.css");
 
         FXMLLoader adminStartLoader = new FXMLLoader(getClass().getResource("/GUI/FXAdminStart.fxml"));
         Parent adminStartPane = adminStartLoader.load();
         Scene adminStartScene = new Scene(adminStartPane,1200,700);
-        adminStartScene.getStylesheets().add("/AppStyle/LightMode.css");
+        adminStartScene.getStylesheets().add("/AppStyle/BlueStyle.css");
 
         FXMLLoader adminCreateLoader = new FXMLLoader(getClass().getResource("/GUI/FXAdminCreate.fxml"));
         Parent adminCreatePane = adminCreateLoader.load();
         Scene adminCreateScene = new Scene(adminCreatePane,1200,700);
-        adminCreateScene.getStylesheets().add("/AppStyle/LightMode.css");
+        adminCreateScene.getStylesheets().add("/AppStyle/BlueStyle.css");
 
         FXMLLoader adminDeleteLoader = new FXMLLoader(getClass().getResource("/GUI/FXAdminDelete.fxml"));
         Parent adminDeletePane = adminDeleteLoader.load();
         Scene adminDeleteScene = new Scene(adminDeletePane,1200,700);
-        adminDeleteScene.getStylesheets().add("/AppStyle/LightMode.css");
+        adminDeleteScene.getStylesheets().add("/AppStyle/BlueStyle.css");
 
         FXMLLoader adminEditLoader = new FXMLLoader(getClass().getResource("/GUI/FXAdminEdit.fxml"));
         Parent adminEditPane = adminEditLoader.load();
         Scene adminEditScene = new Scene(adminEditPane,1200,700);
-        adminEditScene.getStylesheets().add("/AppStyle/LightMode.css");
+        adminEditScene.getStylesheets().add("/AppStyle/BlueStyle.css");
 
         FXMLLoader settingLoader = new FXMLLoader(getClass().getResource("/GUI/FXSettings.fxml"));
         Parent settingPane = settingLoader.load();
         Scene settingsScene = new Scene(settingPane,1200,700);
-        settingsScene.getStylesheets().add("/AppStyle/LightMode.css");
+        settingsScene.getStylesheets().add("/AppStyle/BlueStyle.css");
 
         sceneControllers.add(new SceneController(loginSearchScene,ControllerName.Login));
         sceneControllers.add(new SceneController(toDoListScene,ControllerName.ToDoList));
@@ -112,6 +112,7 @@ public class Main extends Application {
         }));
 
         stage.setResizable(false);
+        stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(loginSearchScene);
         setSceneLocation();
         stage.setTitle("Login");

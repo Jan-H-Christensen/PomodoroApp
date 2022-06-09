@@ -29,7 +29,7 @@ public class ToDoListController extends Controller{
 
         TableColumn<Project, Integer> nameCol3 = new TableColumn<>("NumberWorkOn");
         nameCol3.setCellValueFactory(new PropertyValueFactory<>("numberWorkOn"));
-        nameCol3.setPrefWidth(223);
+        nameCol3.setPrefWidth(222);
 
         projectView.getColumns().addAll(nameCol1,nameCol2,nameCol3);
         projectView.itemsProperty().bind(DataHub.getListProperty());
@@ -101,5 +101,10 @@ public class ToDoListController extends Controller{
     @Override
     public void settingsScene() {
         super.settingsScene();
+    }
+
+    @Override
+    public void minimize() {
+        super.minimize();
     }
 }

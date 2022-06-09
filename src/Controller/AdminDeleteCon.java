@@ -53,4 +53,9 @@ public class AdminDeleteCon extends Controller{
     }
 
      */
+
+    @Override
+    public void minimize() {
+        super.minimize();
+    }
 }

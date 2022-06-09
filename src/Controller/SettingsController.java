@@ -1,7 +1,6 @@
 package Controller;
 
 import DB.DBHandler;
-import Data.DataHub;
 import ObjectTypes.Config;
 import ObjectTypes.Employee;
 import PomodoroApp.Main;
@@ -31,13 +30,13 @@ public class SettingsController extends Controller{
         darkMode.selectedProperty().addListener((obs, wasSelected, isSelected) -> {
             if (isSelected) {
                 for(SceneController sceneStyle: Main.getSceneControllers()) {
-                    sceneStyle.getScene().getStylesheets().remove("/AppStyle/LightMode.css");
+                    sceneStyle.getScene().getStylesheets().remove("/AppStyle/BlueStyle.css");
                     sceneStyle.getScene().getStylesheets().add("/AppStyle/DarkMode.css");
                 }
             } if(wasSelected) {
                 for(SceneController sceneStyle: Main.getSceneControllers()){
                     sceneStyle.getScene().getStylesheets().remove("/AppStyle/DarkMode.css");
-                    sceneStyle.getScene().getStylesheets().add("/AppStyle/LightMode.css");
+                    sceneStyle.getScene().getStylesheets().add("/AppStyle/BlueStyle.css");
                 }
             }
         });
@@ -107,5 +106,10 @@ public class SettingsController extends Controller{
     public void saveSettings(){
         Config config = new Config(this);
         config.saveSettings();
+    }
+
+    @Override
+    public void minimize() {
+        super.minimize();
     }
 }

@@ -50,4 +50,9 @@ public class PomodoroProCon extends Controller{
     public void settingsScene() {
         super.settingsScene();
     }
+
+    @Override
+    public void minimize() {
+        super.minimize();
+    }
 }

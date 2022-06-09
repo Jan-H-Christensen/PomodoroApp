@@ -88,4 +88,9 @@ public class ProjectController extends Controller{
     public void projectScene() {
         super.projectScene();
     }
+
+    @Override
+    public void minimize() {
+        super.minimize();
+    }
 }

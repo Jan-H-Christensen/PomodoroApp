@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.PomodoroProCon">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.PomodoroProCon">
    <left>
-      <GridPane prefHeight="468.0" prefWidth="113.0" BorderPane.alignment="CENTER">
+      <GridPane prefHeight="550.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
          </columnConstraints>
@@ -19,57 +26,64 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Button fx:id="btnToDoList" mnemonicParsing="false" onAction="#toDoListScene" prefHeight="137.0" prefWidth="149.0" text="To-Do-List" />
-            <Button fx:id="btnPomodoro" mnemonicParsing="false" onAction="#PomodoroStartScene" prefHeight="137.0" prefWidth="149.0" text="Pomodoro" GridPane.rowIndex="2" />
-            <Button fx:id="btnProject" mnemonicParsing="false" onAction="#projectScene" prefHeight="137.0" prefWidth="149.0" text="Project" GridPane.rowIndex="1" />
-            <Button fx:id="btnAdmin" mnemonicParsing="false" onAction="#adminStartScene" prefHeight="137.0" prefWidth="149.0" text="Admin" GridPane.rowIndex="3" />
-            <Button fx:id="btnLogout" mnemonicParsing="false" onAction="#logOut" prefHeight="137.0" prefWidth="149.0" text="Logout" GridPane.rowIndex="4" />
-            <Button fx:id="btnSettings" mnemonicParsing="false" prefHeight="137.0" prefWidth="149.0" text="Setting" GridPane.rowIndex="5" />
+            <Button fx:id="btnToDoList" mnemonicParsing="false" onAction="#toDoListScene" prefHeight="92.0" prefWidth="200.0" text="To-Do-List" />
+            <Button fx:id="btnPomodoro" mnemonicParsing="false" onAction="#PomodoroStartScene" prefHeight="92.0" prefWidth="200.0" text="Pomodoro" GridPane.rowIndex="2" />
+            <Button fx:id="btnProject" mnemonicParsing="false" onAction="#projectScene" prefHeight="92.0" prefWidth="200.0" text="Project" GridPane.rowIndex="1" />
+            <Button fx:id="btnAdmin" mnemonicParsing="false" onAction="#adminStartScene" prefHeight="92.0" prefWidth="200.0" text="Admin" GridPane.rowIndex="3" />
+            <Button fx:id="btnLogout" mnemonicParsing="false" onAction="#logOut" prefHeight="91.0" prefWidth="200.0" text="Logout" GridPane.rowIndex="4" />
+            <Button fx:id="btnSettings" mnemonicParsing="false" onAction="#settingsScene" prefHeight="91.0" prefWidth="200.0" text="Setting" GridPane.rowIndex="5" />
          </children>
       </GridPane>
    </left>
    <top>
-      <Label fx:id="headline" text="Test" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
+      <Pane BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="headline" alignment="CENTER" prefHeight="150.0" prefWidth="1200.0" text="Pomodoro">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnMinimize" layoutX="1170.0" mnemonicParsing="false" onAction="#minimize" prefHeight="30.0" prefWidth="30.0" text="-" />
+         </children>
+      </Pane>
    </top>
    <right>
       <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="toDoList" layoutY="47.0" prefHeight="526.0" prefWidth="200.0" />
-            <Label layoutX="2.0" layoutY="4.0" prefHeight="39.0" prefWidth="199.0" text="To-Do-List" />
-            <Button fx:id="btnRemove" layoutX="56.0" layoutY="582.0" mnemonicParsing="false" onAction="#remove" prefWidth="75.0" text="Remove" />
-            <Label fx:id="errorToDo" layoutX="19.0" layoutY="617.0" prefHeight="21.0" prefWidth="159.0" />
+            <TableView fx:id="toDoList" layoutY="50.0" prefHeight="450.0" prefWidth="200.0" />
+            <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="To-Do-List">
+               <font>
+                  <Font size="23.0" />
+               </font></Label>
+            <Button fx:id="btnRemove" layoutY="500.0" mnemonicParsing="false" onAction="#remove" prefHeight="50.0" prefWidth="200.0" text="Remove" />
          </children>
       </Pane>
    </right>
    <center>
       <Pane prefHeight="647.0" prefWidth="896.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="485.0" layoutY="471.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="108.0" text="C" />
-            <Label layoutX="190.0" layoutY="137.0" text="Name" />
-            <Label layoutX="190.0" layoutY="185.0" text="Etimate Time" />
-            <Label layoutX="190.0" layoutY="231.0" text="Estimate Pomodoro" />
-            <Label layoutX="190.0" layoutY="281.0" text="Status" />
-            <Label fx:id="name" layoutX="347.0" layoutY="137.0" text="Label" />
-            <Label fx:id="estimateTime" layoutX="347.0" layoutY="185.0" text="Label" />
-            <Label fx:id="EstimatedPomodoro" layoutX="347.0" layoutY="231.0" text="Label" />
-            <Label fx:id="status" layoutX="347.0" layoutY="281.0" text="Label" />
-            <Label layoutX="393.0" layoutY="59.0" text="Pomodoro Info" />
-            <Button layoutX="303.0" layoutY="471.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="116.0" text="P" />
-            <Button layoutX="123.0" layoutY="471.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="126.0" text="S" />
-            <Label layoutX="489.0" layoutY="231.0" text="Corrent Pomodoro" />
-            <Label fx:id="currentPomodoro" layoutX="662.0" layoutY="231.0" text="Label" />
-            <Label layoutX="489.0" layoutY="137.0" text="Work Time" />
-            <Label fx:id="workTime" layoutX="662.0" layoutY="137.0" text="Label" />
-            <Label layoutX="489.0" layoutY="185.0" text="Break Time" />
-            <Label fx:id="breakTime" layoutX="662.0" layoutY="185.0" text="Label" />
-            <Button layoutX="123.0" layoutY="565.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="650.0" text="interrupt" />
-            <ProgressBar layoutX="123.0" layoutY="409.0" prefHeight="23.0" prefWidth="475.0" progress="0.0" />
-            <ProgressBar layoutX="595.0" layoutY="409.0" prefHeight="23.0" prefWidth="175.0" progress="0.0" />
-            <Button layoutX="662.0" layoutY="471.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="108.0" text="C" />
+            <Button layoutX="438.0" layoutY="404.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="108.0" text="C" />
+            <Label layoutX="146.0" layoutY="146.0" text="Name" />
+            <Label layoutX="146.0" layoutY="194.0" text="Etimate Time" />
+            <Label layoutX="146.0" layoutY="240.0" text="Estimate Pomodoro" />
+            <Label layoutX="146.0" layoutY="290.0" text="Status" />
+            <Label fx:id="name" layoutX="303.0" layoutY="146.0" text="Label" />
+            <Label fx:id="estimateTime" layoutX="303.0" layoutY="194.0" text="Label" />
+            <Label fx:id="EstimatedPomodoro" layoutX="303.0" layoutY="240.0" text="Label" />
+            <Label fx:id="status" layoutX="303.0" layoutY="290.0" text="Label" />
+            <Label layoutX="350.0" layoutY="82.0" text="Pomodoro Info" />
+            <Button layoutX="256.0" layoutY="404.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="116.0" text="P" />
+            <Button layoutX="76.0" layoutY="404.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="126.0" text="S" />
+            <Label layoutX="445.0" layoutY="240.0" text="Corrent Pomodoro" />
+            <Label fx:id="currentPomodoro" layoutX="618.0" layoutY="240.0" text="Label" />
+            <Label layoutX="445.0" layoutY="146.0" text="Work Time" />
+            <Label fx:id="workTime" layoutX="618.0" layoutY="146.0" text="Label" />
+            <Label layoutX="445.0" layoutY="194.0" text="Break Time" />
+            <Label fx:id="breakTime" layoutX="618.0" layoutY="194.0" text="Label" />
+            <Button layoutX="75.0" layoutY="451.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="650.0" text="interrupt" />
+            <ProgressBar layoutX="75.0" layoutY="349.0" prefHeight="23.0" prefWidth="475.0" progress="0.0" />
+            <ProgressBar layoutX="547.0" layoutY="349.0" prefHeight="23.0" prefWidth="175.0" progress="0.0" />
+            <Button layoutX="615.0" layoutY="404.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="108.0" text="C" />
          </children>
       </Pane>
    </center>

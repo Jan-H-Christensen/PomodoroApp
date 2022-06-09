@@ -13,7 +13,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminCreateCon">
    <left>
-      <GridPane prefHeight="468.0" prefWidth="113.0" BorderPane.alignment="CENTER">
+      <GridPane prefHeight="550.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
@@ -26,52 +26,71 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="btnToDoList" mnemonicParsing="false" onAction="#toDoListScene" prefHeight="137.0" prefWidth="149.0" text="To-Do-List" />
-            <Button fx:id="btnPomodoro" mnemonicParsing="false" onAction="#PomodoroStartScene" prefHeight="137.0" prefWidth="149.0" text="Pomodoro" GridPane.rowIndex="2" />
-            <Button fx:id="btnProject" mnemonicParsing="false" onAction="#projectScene" prefHeight="137.0" prefWidth="149.0" text="Project" GridPane.rowIndex="1" />
-            <Button fx:id="btnAdmin" mnemonicParsing="false" onAction="#adminStartScene" prefHeight="137.0" prefWidth="149.0" text="Admin" GridPane.rowIndex="3" />
-            <Button fx:id="btnLogout" mnemonicParsing="false" onAction="#logOut" prefHeight="137.0" prefWidth="149.0" text="Logout" GridPane.rowIndex="4" />
-            <Button fx:id="btnSettings" mnemonicParsing="false" onAction="#settingsScene" prefHeight="137.0" prefWidth="149.0" text="Setting" GridPane.rowIndex="5" />
+            <Button fx:id="btnToDoList" mnemonicParsing="false" onAction="#toDoListScene" prefHeight="92.0" prefWidth="221.0" text="To-Do-List" />
+            <Button fx:id="btnPomodoro" mnemonicParsing="false" onAction="#PomodoroStartScene" prefHeight="92.0" prefWidth="240.0" text="Pomodoro" GridPane.rowIndex="2" />
+            <Button fx:id="btnProject" mnemonicParsing="false" onAction="#projectScene" prefHeight="92.0" prefWidth="224.0" text="Project" GridPane.rowIndex="1" />
+            <Button fx:id="btnAdmin" mnemonicParsing="false" onAction="#adminStartScene" prefHeight="92.0" prefWidth="267.0" text="Admin" GridPane.rowIndex="3" />
+            <Button fx:id="btnSettings" mnemonicParsing="false" onAction="#settingsScene" prefHeight="91.0" prefWidth="303.0" text="Setting" GridPane.rowIndex="5" />
+            <Button fx:id="btnLogout" mnemonicParsing="false" onAction="#logOut" prefHeight="91.0" prefWidth="267.0" text="Logout" GridPane.rowIndex="4" />
          </children>
       </GridPane>
    </left>
    <top>
-      <Label fx:id="headline" text="Test" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
+      <Pane BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="headline" alignment="CENTER" prefHeight="150.0" prefWidth="1200.0" text="Create New User">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnMinimize" layoutX="1170.0" mnemonicParsing="false" onAction="#minimize" prefHeight="30.0" prefWidth="30.0" text="-" />
+         </children>
+      </Pane>
    </top>
    <right>
       <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="toDoList" layoutY="47.0" prefHeight="526.0" prefWidth="200.0" />
-            <Label layoutX="2.0" layoutY="4.0" prefHeight="39.0" prefWidth="199.0" text="To-Do-List" />
-            <Button fx:id="btnRemove" layoutX="56.0" layoutY="582.0" mnemonicParsing="false" onAction="#remove" prefWidth="75.0" text="Remove" />
-            <Label fx:id="errorToDo" layoutX="19.0" layoutY="617.0" prefHeight="21.0" prefWidth="159.0" />
+            <TableView fx:id="toDoList" layoutY="50.0" prefHeight="450.0" prefWidth="200.0" />
+            <Label fx:id="lbToDoList" alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="To-Do-List">
+               <font>
+                  <Font size="23.0" />
+               </font></Label>
+            <Button fx:id="btnRemove" layoutY="500.0" mnemonicParsing="false" onAction="#remove" prefHeight="50.0" prefWidth="200.0" text="Remove" />
          </children>
       </Pane>
    </right>
    <center>
-      <Pane prefHeight="647.0" prefWidth="896.0" BorderPane.alignment="CENTER">
+      <Pane prefHeight="550.0" prefWidth="855.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="653.0" layoutY="369.0" mnemonicParsing="false" text="Cancel" />
-            <Button layoutX="539.0" layoutY="369.0" mnemonicParsing="false" text="Create" />
-            <Label layoutX="538.0" layoutY="184.0" text="Phone" />
-            <TextField layoutX="538.0" layoutY="205.0" />
-            <Label layoutX="538.0" layoutY="261.0" text="Department" />
-            <TextField layoutX="538.0" layoutY="282.0" />
-            <Label layoutX="538.0" layoutY="313.0" text="error" />
-            <Label layoutX="539.0" layoutY="236.0" text="error" />
-            <Label layoutX="146.0" layoutY="183.0" text="Name" />
-            <TextField layoutX="146.0" layoutY="204.0" />
-            <Label layoutX="146.0" layoutY="337.0" text="Address" />
-            <TextField layoutX="146.0" layoutY="358.0" />
-            <Label layoutX="146.0" layoutY="389.0" text="error" />
-            <Label layoutX="146.0" layoutY="261.0" text="E-Mail" />
-            <TextField layoutX="146.0" layoutY="282.0" />
-            <Label layoutX="147.0" layoutY="313.0" text="error" />
-            <Label layoutX="147.0" layoutY="235.0" text="error" />
+            <Button layoutX="435.0" layoutY="403.0" mnemonicParsing="false" onAction="#clear" text="Cancel" />
+            <Button layoutX="301.0" layoutY="403.0" mnemonicParsing="false" onAction="#createConsultant" text="Create" />
+            <Label layoutX="179.0" layoutY="314.0" text="Phone" />
+            <TextField fx:id="phone" layoutX="179.0" layoutY="335.0" />
+            <Label layoutX="435.0" layoutY="77.0" text="Department" />
+            <TextField fx:id="department" layoutX="435.0" layoutY="98.0" />
+            <Label fx:id="departmentError" layoutX="435.0" layoutY="129.0" />
+            <Label fx:id="phoneError" layoutX="180.0" layoutY="366.0" />
+            <Label layoutX="179.0" layoutY="77.0" text="Name" />
+            <TextField fx:id="name" layoutX="179.0" layoutY="98.0" />
+            <Label layoutX="179.0" layoutY="231.0" text="Address" />
+            <TextField fx:id="address" layoutX="179.0" layoutY="252.0" />
+            <Label fx:id="addressError" layoutX="179.0" layoutY="283.0" />
+            <Label layoutX="179.0" layoutY="155.0" text="E-Mail" />
+            <TextField fx:id="email" layoutX="179.0" layoutY="176.0" />
+            <Label fx:id="emailError" layoutX="180.0" layoutY="207.0" />
+            <Label fx:id="nameError" layoutX="180.0" layoutY="129.0" />
+            <Label layoutX="435.0" layoutY="239.0" text="Username" />
+            <TextField fx:id="username" layoutX="435.0" layoutY="260.0" />
+            <Label layoutX="435.0" layoutY="317.0" text="Password" />
+            <TextField fx:id="password" layoutX="435.0" layoutY="338.0" />
+            <Label fx:id="passwordError" layoutX="436.0" layoutY="369.0" />
+            <Label fx:id="usernameError" layoutX="436.0" layoutY="291.0" />
+            <Label fx:id="message" alignment="CENTER" layoutX="301.0" layoutY="442.0" prefHeight="31.0" prefWidth="198.0">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="436.0" layoutY="192.0" text="Account username &amp; password" />
          </children>
       </Pane>
    </center>

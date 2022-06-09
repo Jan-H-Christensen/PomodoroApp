@@ -132,4 +132,9 @@ public class PomodoroController extends Controller{
         setListener();
         super.settingsScene();
     }
+
+    @Override
+    public void minimize() {
+        super.minimize();
+    }
 }

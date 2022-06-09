@@ -62,4 +62,9 @@ public class AdminController extends Controller{
     public void settingsScene() {
         super.settingsScene();
     }
+
+    @Override
+    public void minimize() {
+        super.minimize();
+    }
 }

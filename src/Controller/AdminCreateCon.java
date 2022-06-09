@@ -144,4 +144,9 @@ public class AdminCreateCon extends Controller{
         password.clear();
         passwordError.setText("");
     }
+
+    @Override
+    public void minimize() {
+        super.minimize();
+    }
 }

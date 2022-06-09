@@ -1,11 +1,12 @@
 
 .root{
-    -fx-accent: #000000;
-    -fx-hoverColor: #000000;
-    -fx-standartText: #ffffff;
-    -fx-textHover: #ffffff;
-    -fx-base: -fx-accent;
-    -fx-background-color: derive(-fx-base,45%)
+    -fx-accent: #000080;
+    -fx-hoverColor: #4169E1;
+    -fx-accent2: #ffffff;
+    -fx-textHover: #000000;
+    -fx-tabelRowColor: #87CEFA;
+    -fx-base: -fx-accent2;
+    -fx-focus-color: -fx-accent;
 }
 
 .label{
@@ -16,9 +17,8 @@
 #headline{
     -fx-font-size: 36;
     -fx-font-width: bold;
-    -fx-text-fill: -fx-standartText;
-    fx-base: -fx-accent;
-    -fx-background-color: derive(-fx-base,20%)
+    -fx-text-fill: -fx-accent2;
+    -fx-background-color: -fx-accent;
 }
 
 #availableProjects{
@@ -30,9 +30,8 @@
 #lbToDoList{
     -fx-font-size: 23;
     -fx-font-width: bold;
-    -fx-text-fill: -fx-standartText;
-    fx-base: -fx-accent;
-    -fx-background-color: derive(-fx-base,20%)
+    -fx-text-fill: -fx-accent2;
+    -fx-background-color: -fx-accent;
 }
 
 .text-field {
@@ -41,65 +40,56 @@
 
 .button{
     -fx-focus-traversable: false;
-    -fx-text-fill: -fx-standartText;
-    -fx-base: -fx-accent;
-    -fx-background-color: derive(-fx-base,20%);
+    -fx-text-fill: -fx-accent2;
+    -fx-background-color: -fx-accent;
     -fx-background-radius: 0;
 }
 
 #btnToDoList:hover{
-    -f-fx-base: -fx-accent;
-    -fx-background-color: derive(-fx-base,55%);
-    -fx-text-fill: -fx-standartText;
+    -fx-background-color: -fx-hoverColor;
+    -fx-text-fill: black;
     -fx-effect: innershadow(two-pass-box, -fx-accent,100,0.25,0,0);
 }
 
 #btnAdmin:hover{
-    -f-fx-base: -fx-accent;
-    -fx-background-color: derive(-fx-base,55%);
+    -fx-background-color: -fx-hoverColor;
     -fx-text-fill: -fx-textHover;
     -fx-effect: innershadow(two-pass-box, -fx-accent,100,0.25,0,0);
 }
 
 #btnLogout:hover{
-    -f-fx-base: -fx-accent;
-    -fx-background-color: derive(-fx-base,55%);
+    -fx-background-color: -fx-hoverColor;
     -fx-text-fill: -fx-textHover;
     -fx-effect: innershadow(two-pass-box, -fx-accent,100,0.25,0,0);
 }
 
 #btnSettings:hover{
-    -f-fx-base: -fx-accent;
-    -fx-background-color: derive(-fx-base,55%);
+    -fx-background-color: -fx-hoverColor;
     -fx-text-fill: -fx-textHover;
     -fx-effect: innershadow(two-pass-box, -fx-accent,100,0.25,0,0);
 }
 
 
 #btnPomodoro:hover{
-    -f-fx-base: -fx-accent;
-    -fx-background-color: derive(-fx-base,55%);
+    -fx-background-color: -fx-hoverColor;
     -fx-text-fill: -fx-textHover;
     -fx-effect: innershadow(two-pass-box, -fx-accent,100,0.25,0,0);
 }
 
 #btnProject:hover{
-    -f-fx-base: -fx-accent;
-    -fx-background-color: derive(-fx-base,55%);
+    -fx-background-color: -fx-hoverColor;
     -fx-text-fill: -fx-textHover;
     -fx-effect: innershadow(two-pass-box, -fx-accent,100,0.25,0,0);
 }
 
 .button:hover{
-    --f-fx-base: -fx-accent;
-    -fx-background-color: derive(-fx-base,55%);
+    -fx-background-color: -fx-hoverColor;
     -fx-text-fill: -fx-textHover;
     -fx-effect: innershadow(gaussian, -fx-accent,35,0.3,0,0);
 }
 
 #btnRemove:hover{
-    -f-fx-base: -fx-accent;
-    -fx-background-color: derive(-fx-base,55%);
+    -fx-background-color: -fx-hoverColor;
     -fx-text-fill: -fx-textHover;
     -fx-effect: innershadow(two-pass-box, -fx-accent,100,0.25,0,0);
 }
@@ -109,25 +99,24 @@
 }
 
 .separator *.line {
-    -f-fx-base: -fx-accent;
-    -fx-background-color: derive(-fx-base,55%);
+    -fx-background-color: -fx-accent;
     -fx-border-style: solid;
     -fx-border-width: 1px;
 }
 
 .scroll-bar{
-    -fx-base: -fx-accent;
-    -fx-background-color: derive(-fx-base,50%)
+    -fx-base: -fx-accent2;
+    -fx-background-color: derive(-fx-base,45%)
 }
 
 .table-view{
-    -fx-base: -fx-accent;
-    -fx-background-color: derive(-fx-base,50%)
+    -fx-base: -fx-accent2;
+    -fx-background-color: derive(-fx-base,45%)
 }
 
 #toDoList{
     -fx-base: -fx-accent;
-    -fx-background-color: derive(-fx-base,50%)
+    -fx-background-color: derive(-fx-base,45%)
 }
 
 .table-view .column-header .label{
@@ -139,8 +128,8 @@
 .list-cell:odd,
 .table-row-cell:even,
 .table-row-cell:odd{
-    -fx-base: -fx-accent;
-    -fx-control-inner-background: derive(-fx-base, 85%);
+    -fx-base: -fx-tabelRowColor;
+    -fx-control-inner-background: derive(-fx-base, 95%);
 }
 
 .list-cell:empty,
