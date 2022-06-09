@@ -124,7 +124,6 @@ public class Controller {
         Main.changeScene(ControllerName.PomodoroProgress);
         Main.setSceneLocation();
     }
-
     @FXML
     public  void settingsScene(){
         Main.changeScene(ControllerName.Settings);

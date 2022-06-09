@@ -38,7 +38,7 @@ public class ProjectController extends Controller{
             if (time.getText().matches("\\d*") && !time.getText().isEmpty()){
                 DataHub.getToDoList().add(
                         new Project(createdProjectCheck,Integer.parseInt(time.getText()),standardNumberWorkOn,name.getText(),standardStatus));
-
+                clear();
             }
             else {
                 time.clear();
@@ -89,8 +89,4 @@ public class ProjectController extends Controller{
         super.projectScene();
     }
 
-    @Override
-    public void minimize() {
-        super.minimize();
-    }
 }

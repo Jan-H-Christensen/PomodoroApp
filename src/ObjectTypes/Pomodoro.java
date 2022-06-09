@@ -3,6 +3,8 @@ package ObjectTypes;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+import java.nio.channels.Pipe;
+
 public class Pomodoro {
     private static String name;
     private static String estimateTime;
@@ -10,6 +12,9 @@ public class Pomodoro {
     private static String status;
     private static String workTime;
     private static String breakTIme;
+    private static String currentPomodoro;
+    private static Project project;
+    private static int toDoListID;
 
     private static StringProperty nameProperty = new SimpleStringProperty("");;
     private static StringProperty estimateTimeProperty = new SimpleStringProperty("");;
@@ -17,7 +22,52 @@ public class Pomodoro {
     private static StringProperty statusProperty = new SimpleStringProperty("");;
     private static StringProperty workTimeProperty = new SimpleStringProperty("");;
     private static StringProperty breakTImeProperty = new SimpleStringProperty("");
+    private static StringProperty currentPomodoroProperty = new SimpleStringProperty("");
 
+    public static void clear(){
+        setName("");
+        setEstimateTime("");
+        setEstimatePomodoro("");
+        setStatus("");
+        setWorkTime("");
+        setBreakTIme("");
+        setCurrentPomodoro("0");
+        setProject(null);
+        setToDoListID(0);
+    }
+
+    public static String getCurrentPomodoro() {
+        return currentPomodoro;
+    }
+
+    public static void setCurrentPomodoro(String currentPomodoro1) {
+        currentPomodoroProperty.set(currentPomodoro1);
+        currentPomodoro = currentPomodoro1;
+    }
+
+    public static String getCurrentPomodoroProperty() {
+        return currentPomodoroProperty.get();
+    }
+
+    public static StringProperty currentPomodoroPropertyProperty() {
+        return currentPomodoroProperty;
+    }
+
+    public static int getToDoListID() {
+        return toDoListID;
+    }
+
+    public static void setToDoListID(int toDoListID) {
+        Pomodoro.toDoListID = toDoListID;
+    }
+
+    public static Project getProject() {
+        return project;
+    }
+
+    public static void setProject(Project project1) {
+        project = project1;
+    }
 
     public static String getNameProperty() {
         return nameProperty.get();

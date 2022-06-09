@@ -2,8 +2,11 @@ package DB;
 
 import Data.DataHub;
 import ObjectTypes.Employee;
+import ObjectTypes.Pomodoro;
 import ObjectTypes.Project;
 import java.sql.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class DBHandler {
 
@@ -286,6 +289,79 @@ public class DBHandler {
         }catch (SQLException e){
             System.err.println(e.getMessage());
             return false;
+        }
+    }
+
+    public static void updateToDoList(double currentProgress){
+        try {
+            PreparedStatement ps = con.prepareStatement("exec updateToDoList "+Pomodoro.getToDoListID()+","+currentProgress+"");
+            ps.executeUpdate();
+            ps.close();
+        }catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
+    public static void updateToDoList(double currentProgress,int currentPomodoro){
+        try {
+            PreparedStatement ps = con.prepareStatement("exec updateToDoListAndCurrentPomodoro "+ Pomodoro.getToDoListID()+","+currentProgress+","+currentPomodoro+"");
+            ps.executeUpdate();
+            ps.close();
+        }catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
+    public static void finishPomodoro(){
+        try {
+            PreparedStatement ps = con.prepareStatement("exec finishPomodoro "+Pomodoro.getToDoListID()+","+Pomodoro.getProject().getTaskId()+"");
+            ps.executeUpdate();
+            ps.close();
+        }catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+
+    }
+
+    public static void createToDoList(){
+        Date date = new java.util.Date();
+        SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd:MM:yyyy");
+        if (Pomodoro.getToDoListID() == 0) {
+            try{
+                PreparedStatement ps2 = con.prepareStatement("exec createToDoList " + Employee.getEmpID() + "," + Integer.parseInt(Pomodoro.getWorkTime()) + "," + Integer.parseInt(Pomodoro.getBreakTIme()) + "," + Pomodoro.getProject().getTaskId() + ",'" + dateFormat.format(date) + "','" + timeFormat.format(date) + "','" + Pomodoro.getProject().getTaskName() + "'," + Pomodoro.getProject().getEstimatedTime() + "");
+                ps2.executeUpdate();
+                ps2.close();
+            }catch (SQLException e) {
+                System.err.println(e.getMessage());
+            }
+        }
+        getToDoList(dateFormat.format(date));
+    }
+
+    public static void getToDoList(String date){
+        try {
+            PreparedStatement ps1 = con.prepareStatement("exec checkToDoList '" + Pomodoro.getProject().getTaskName() + "'," + Employee.getEmpID() + ",'" + date + "'," + Integer.parseInt(Pomodoro.getWorkTime()) + "," + Integer.parseInt(Pomodoro.getBreakTIme()) + "");
+            ResultSet rs = ps1.executeQuery();
+
+            while (rs.next()) {
+                Pomodoro.setToDoListID(rs.getInt(1));
+                Pomodoro.getProject().setTaskId(rs.getInt(2));
+            }
+            rs.close();
+            ps1.close();
+        }catch (Exception e){
+            System.err.println(e.getMessage());
+        }
+    }
+
+    public static void cancelChecker(){
+        try {
+            PreparedStatement ps = con.prepareStatement("exec cancelChecker "+Pomodoro.getToDoListID()+"");
+            ps.executeUpdate();
+            ps.close();
+        }catch (SQLException e) {
+            System.err.println(e.getMessage());
         }
     }
 }

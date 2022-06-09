@@ -43,7 +43,6 @@ public class SettingsController extends Controller{
     }
 
     @FXML
-
     private void changePassword(){
 
         boolean userCheck = DBHandler.passwordCheck(username.getText(),currentPassword.getText());

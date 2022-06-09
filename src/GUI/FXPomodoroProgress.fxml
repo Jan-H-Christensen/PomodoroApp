@@ -62,7 +62,7 @@
    <center>
       <Pane prefHeight="647.0" prefWidth="896.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="438.0" layoutY="404.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="108.0" text="C" />
+            <Button fx:id="btnResume" layoutX="350.0" layoutY="404.0" mnemonicParsing="false" onAction="#Resume" prefHeight="31.0" prefWidth="125.0" text="Resume" />
             <Label layoutX="146.0" layoutY="146.0" text="Name" />
             <Label layoutX="146.0" layoutY="194.0" text="Etimate Time" />
             <Label layoutX="146.0" layoutY="240.0" text="Estimate Pomodoro" />
@@ -72,18 +72,19 @@
             <Label fx:id="EstimatedPomodoro" layoutX="303.0" layoutY="240.0" text="Label" />
             <Label fx:id="status" layoutX="303.0" layoutY="290.0" text="Label" />
             <Label layoutX="350.0" layoutY="82.0" text="Pomodoro Info" />
-            <Button layoutX="256.0" layoutY="404.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="116.0" text="P" />
-            <Button layoutX="76.0" layoutY="404.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="126.0" text="S" />
+            <Button fx:id="btnPause" layoutX="212.0" layoutY="404.0" mnemonicParsing="false" onAction="#Pause" prefHeight="30.0" prefWidth="125.0" text="Pause" />
+            <Button fx:id="btnStart" layoutX="75.0" layoutY="404.0" mnemonicParsing="false" onAction="#Start" prefHeight="31.0" prefWidth="125.0" text="Start" />
             <Label layoutX="445.0" layoutY="240.0" text="Corrent Pomodoro" />
             <Label fx:id="currentPomodoro" layoutX="618.0" layoutY="240.0" text="Label" />
             <Label layoutX="445.0" layoutY="146.0" text="Work Time" />
             <Label fx:id="workTime" layoutX="618.0" layoutY="146.0" text="Label" />
             <Label layoutX="445.0" layoutY="194.0" text="Break Time" />
             <Label fx:id="breakTime" layoutX="618.0" layoutY="194.0" text="Label" />
-            <Button layoutX="75.0" layoutY="451.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="650.0" text="interrupt" />
-            <ProgressBar layoutX="75.0" layoutY="349.0" prefHeight="23.0" prefWidth="475.0" progress="0.0" />
-            <ProgressBar layoutX="547.0" layoutY="349.0" prefHeight="23.0" prefWidth="175.0" progress="0.0" />
-            <Button layoutX="615.0" layoutY="404.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="108.0" text="C" />
+            <Button fx:id="btnInterrupt" layoutX="75.0" layoutY="451.0" mnemonicParsing="false" onAction="#interrupt" prefHeight="31.0" prefWidth="402.0" text="Interrupt" />
+            <ProgressBar fx:id="proWork" layoutX="75.0" layoutY="349.0" prefHeight="23.0" prefWidth="475.0" progress="0.0" />
+            <ProgressBar fx:id="proBreak" layoutX="547.0" layoutY="349.0" prefHeight="23.0" prefWidth="175.0" progress="0.0" />
+            <Button fx:id="btnCancel" layoutX="615.0" layoutY="451.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="31.0" prefWidth="108.0" text="Cancel" />
+            <Button fx:id="btnFin" layoutX="616.0" layoutY="404.0" mnemonicParsing="false" onAction="#finish" prefHeight="31.0" prefWidth="106.0" text="Finish" />
          </children>
       </Pane>
    </center>

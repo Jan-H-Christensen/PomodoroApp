@@ -16,6 +16,9 @@ public class Project {
         this.status = status;
     }
 
+    public void setTaskId(int taskId) {
+        this.taskId = taskId;
+    }
     public int getTaskId() {
         return taskId;
     }
