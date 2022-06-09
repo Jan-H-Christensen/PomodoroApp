@@ -1,0 +1,144 @@
+
+.root{
+    -fx-accent: #000080;
+    -fx-hoverColor: #4169E1;
+    -fx-accent2: #ffffff;
+    -fx-textHover: #000000;
+    -fx-tabelRowColor: #87CEFA;
+    -fx-base: -fx-accent2;
+    -fx-focus-color: -fx-accent;
+}
+
+.label{
+    -fx-font-size: 14;
+    -fx-font-family: "Lucida Handwriting";
+}
+
+#headline{
+    -fx-font-size: 36;
+    -fx-font-width: bold;
+    -fx-text-fill: -fx-accent2;
+    -fx-background-color: -fx-accent;
+}
+
+#availableProjects{
+    -fx-font-size: 23;
+    -fx-font-width: bold;
+
+}
+
+#lbToDoList{
+    -fx-font-size: 23;
+    -fx-font-width: bold;
+    -fx-text-fill: -fx-accent2;
+    -fx-background-color: -fx-accent;
+}
+
+.text-field {
+    -fx-prompt-text-fill: -fx-textHover;
+}
+
+.button{
+    -fx-focus-traversable: false;
+    -fx-text-fill: -fx-accent2;
+    -fx-background-color: -fx-accent;
+    -fx-background-radius: 0;
+}
+
+#btnToDoList:hover{
+    -fx-background-color: -fx-hoverColor;
+    -fx-text-fill: black;
+    -fx-effect: innershadow(two-pass-box, -fx-accent,100,0.25,0,0);
+}
+
+#btnAdmin:hover{
+    -fx-background-color: -fx-hoverColor;
+    -fx-text-fill: -fx-textHover;
+    -fx-effect: innershadow(two-pass-box, -fx-accent,100,0.25,0,0);
+}
+
+#btnLogout:hover{
+    -fx-background-color: -fx-hoverColor;
+    -fx-text-fill: -fx-textHover;
+    -fx-effect: innershadow(two-pass-box, -fx-accent,100,0.25,0,0);
+}
+
+#btnSettings:hover{
+    -fx-background-color: -fx-hoverColor;
+    -fx-text-fill: -fx-textHover;
+    -fx-effect: innershadow(two-pass-box, -fx-accent,100,0.25,0,0);
+}
+
+
+#btnPomodoro:hover{
+    -fx-background-color: -fx-hoverColor;
+    -fx-text-fill: -fx-textHover;
+    -fx-effect: innershadow(two-pass-box, -fx-accent,100,0.25,0,0);
+}
+
+#btnProject:hover{
+    -fx-background-color: -fx-hoverColor;
+    -fx-text-fill: -fx-textHover;
+    -fx-effect: innershadow(two-pass-box, -fx-accent,100,0.25,0,0);
+}
+
+.button:hover{
+    -fx-background-color: -fx-hoverColor;
+    -fx-text-fill: -fx-textHover;
+    -fx-effect: innershadow(gaussian, -fx-accent,35,0.3,0,0);
+}
+
+#btnRemove:hover{
+    -fx-background-color: -fx-hoverColor;
+    -fx-text-fill: -fx-textHover;
+    -fx-effect: innershadow(two-pass-box, -fx-accent,100,0.25,0,0);
+}
+
+.button:default {
+    -fx-base: -fx-accent ;
+}
+
+.separator *.line {
+    -fx-background-color: -fx-accent;
+    -fx-border-style: solid;
+    -fx-border-width: 1px;
+}
+
+.scroll-bar{
+    -fx-base: -fx-accent2;
+    -fx-background-color: derive(-fx-base,45%)
+}
+
+.table-view{
+    -fx-base: -fx-accent2;
+    -fx-background-color: derive(-fx-base,45%)
+}
+
+#toDoList{
+    -fx-base: -fx-accent;
+    -fx-background-color: derive(-fx-base,45%)
+}
+
+.table-view .column-header .label{
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-weight: none;
+}
+
+.list-cell:even,
+.list-cell:odd,
+.table-row-cell:even,
+.table-row-cell:odd{
+    -fx-base: -fx-tabelRowColor;
+    -fx-control-inner-background: derive(-fx-base, 95%);
+}
+
+.list-cell:empty,
+.table-row-cell:empty {
+    -fx-background-color: transparent;
+}
+
+.list-cell,
+.table-row-cell{
+    -fx-border-color: transparent;
+    -fx-table-cell-border-color:transparent;
+}
