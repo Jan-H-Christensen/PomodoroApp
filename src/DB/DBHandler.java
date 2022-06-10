@@ -15,8 +15,9 @@ public class DBHandler {
     public static boolean connect(String name, String code) {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=JensenAndJensen","sa","1234");
-
+            con = DriverManager.getConnection("jdbc:sqlserver://10.176.160.84:1544;databaseName=JensenAndJensen","sa","1234");
+            //DNS-server 10.176.111.11
+            //Standardgateway 10.176.160.1
             try {
                 PreparedStatement ps = con.prepareStatement("exec CheckUser "+name + ", " + code);
                 ResultSet rs = ps.executeQuery();
