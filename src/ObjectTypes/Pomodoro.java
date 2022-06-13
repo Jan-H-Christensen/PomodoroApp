@@ -15,6 +15,7 @@ public class Pomodoro {
     private static String currentPomodoro;
     private static Project project;
     private static int toDoListID;
+    private static boolean sound;
 
     private static StringProperty nameProperty = new SimpleStringProperty("");;
     private static StringProperty estimateTimeProperty = new SimpleStringProperty("");;
@@ -34,6 +35,15 @@ public class Pomodoro {
         setCurrentPomodoro("0");
         setProject(null);
         setToDoListID(0);
+        sound = false;
+    }
+
+    public static boolean isSound() {
+        return sound;
+    }
+
+    public static void setSound(boolean sound) {
+        Pomodoro.sound = sound;
     }
 
     public static String getCurrentPomodoro() {

@@ -3,6 +3,7 @@ package Controller;
 import Data.DataHub;
 import ObjectTypes.Pomodoro;
 import javafx.fxml.FXML;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
@@ -13,6 +14,9 @@ public class PomodoroController extends Controller{
 
     @FXML
     public TextField workTime,breakTime;
+
+    @FXML
+    public CheckBox musicChecker;
 
     @Override
     public void initialize() {
@@ -76,6 +80,10 @@ public class PomodoroController extends Controller{
                     Pomodoro.setBreakTIme(breakTime.getText());
                     Pomodoro.setProject(toDoList.getSelectionModel().getSelectedItem());
                     Pomodoro.setCurrentPomodoro("0");
+
+                    if (musicChecker.isSelected()){
+                        Pomodoro.setSound(true);
+                    }
 
                     workTime.clear();
                     breakTime.clear();
