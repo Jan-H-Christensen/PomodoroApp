@@ -9,7 +9,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import javafx.util.Duration;
+
+import java.io.File;
 
 public class PomodoroProCon extends Controller{
 
@@ -22,6 +27,9 @@ public class PomodoroProCon extends Controller{
     @FXML
     public ProgressBar proWork,proBreak;
 
+    @FXML
+    public MediaView mediaView;
+
     private Timeline breakProgress;
     private Timeline workProgress;
 
@@ -31,6 +39,8 @@ public class PomodoroProCon extends Controller{
     private int workProgressCount = 0;
     private int breakProgressCount = 0;
 
+    private MediaPlayer timerMediaPlayer;
+    private MediaPlayer endMediaPlayer;
 
     @Override
     public void initialize() {
@@ -79,6 +89,17 @@ public class PomodoroProCon extends Controller{
                 endBreakProc();
             }
         }));
+
+
+        Media timerMedia = new Media(new File("src/SoundFiles/Kitchen_Timer_10_secound.mp3").getAbsoluteFile().toURI().toString());
+        timerMediaPlayer = new MediaPlayer(timerMedia);
+        timerMediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+
+        Media endMedia = new Media(new File("src/SoundFiles/Kitchen_Timer_End.mp3").getAbsoluteFile().toURI().toString());
+        endMediaPlayer = new MediaPlayer(endMedia);
+        endMediaPlayer.setCycleCount(1);
+        endMediaPlayer.setVolume(0.125);
+
     }
 
     private void endWorkProc(){
@@ -89,6 +110,11 @@ public class PomodoroProCon extends Controller{
         workProgressCount =0;
         breakProgress.play();
         breakRunning = true;
+        if (Pomodoro.isSound()){
+            timerMediaPlayer.stop();
+            mediaView.setMediaPlayer(endMediaPlayer);
+            endMediaPlayer.play();
+        }
     }
 
     private void endBreakProc(){
@@ -101,6 +127,8 @@ public class PomodoroProCon extends Controller{
         btnStart.setDisable(false);
         btnCancel.setDisable(false);
         btnFin.setDisable(false);
+        endMediaPlayer.stop();
+        endMediaPlayer.play();
     }
 
     @FXML
@@ -142,6 +170,11 @@ public class PomodoroProCon extends Controller{
         btnCancel.setDisable(true);
         btnFin.setDisable(true);
         DBHandler.createToDoList();
+        if (Pomodoro.isSound()){
+            endMediaPlayer.stop();
+            mediaView.setMediaPlayer(timerMediaPlayer);
+            timerMediaPlayer.play();
+        }
     }
 
     @FXML
