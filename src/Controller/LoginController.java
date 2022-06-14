@@ -25,7 +25,7 @@ public class LoginController extends Controller{
     }
 
     /**
-     *
+     * here we log in to the system by confirming, if the user exists inside the database, otherwise we give the user and error
      */
     public void login(){
 
@@ -44,7 +44,7 @@ public class LoginController extends Controller{
     }
 
     /**
-     *
+     * here we get the stage, and close the stage to close the program
      */
     public void close(){
         Stage stage = (Stage) btnCloseApp.getScene().getWindow();
@@ -52,7 +52,7 @@ public class LoginController extends Controller{
     }
 
     /**
-     *
+     * here we get the stage, so we can minimize the scene
      */
     public void minimize(){
         Stage stage = (Stage) btnMinimize.getScene().getWindow();
