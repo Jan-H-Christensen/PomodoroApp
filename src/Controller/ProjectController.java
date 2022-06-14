@@ -16,7 +16,9 @@ public class ProjectController extends Controller{
     @FXML
     public Label nameError,timeError;
 
-
+    /**
+     *
+     */
     public void createProject(){
         final int createdProjectCheck = 0;
         final int standardNumberWorkOn = 1;
@@ -46,7 +48,9 @@ public class ProjectController extends Controller{
             }
         }
     }
-
+    /**
+     *
+     */
     public void clear(){
         name.clear();
         time.clear();

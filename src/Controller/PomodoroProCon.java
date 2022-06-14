@@ -41,7 +41,9 @@ public class PomodoroProCon extends Controller{
 
     private MediaPlayer timerMediaPlayer;
     private MediaPlayer endMediaPlayer;
-
+    /**
+     *
+     */
     @Override
     public void initialize() {
         super.initialize();
@@ -101,7 +103,9 @@ public class PomodoroProCon extends Controller{
         endMediaPlayer.setVolume(0.125);
 
     }
-
+    /**
+     *
+     */
     private void endWorkProc(){
         workProgress.stop();
         workRunning = false;
@@ -116,7 +120,9 @@ public class PomodoroProCon extends Controller{
             endMediaPlayer.play();
         }
     }
-
+    /**
+     *
+     */
     private void endBreakProc(){
         breakProgress.stop();
         breakRunning = false;
@@ -130,7 +136,9 @@ public class PomodoroProCon extends Controller{
         endMediaPlayer.stop();
         endMediaPlayer.play();
     }
-
+    /**
+     *
+     */
     @FXML
     private void finish(){
         if (finishCheck) {
@@ -148,7 +156,9 @@ public class PomodoroProCon extends Controller{
             this.PomodoroStartScene();
         }
     }
-
+    /**
+     *
+     */
     @FXML
     private void interrupt(){
         if (proWork.getProgress() >= 0 && workRunning){
@@ -157,7 +167,9 @@ public class PomodoroProCon extends Controller{
             endBreakProc();
         }
     }
-
+    /**
+     *
+     */
     @FXML
     public void Start(){
         proWork.setProgress(0.0);
@@ -176,7 +188,9 @@ public class PomodoroProCon extends Controller{
             timerMediaPlayer.play();
         }
     }
-
+    /**
+     *
+     */
     @FXML
     public void Pause(){
         if (workRunning){
@@ -187,7 +201,9 @@ public class PomodoroProCon extends Controller{
             breakProgress.stop();
         }
     }
-
+    /**
+     *
+     */
     @FXML
     public void Resume(){
         if (workRunning){
@@ -198,7 +214,9 @@ public class PomodoroProCon extends Controller{
             breakProgress.play();
         }
     }
-
+    /**
+     *
+     */
     @FXML
     public void Cancel(){
         workRunning = false;
@@ -215,7 +233,9 @@ public class PomodoroProCon extends Controller{
     public void PomodoroStartScene() {
         super.PomodoroStartScene();
     }
-
+    /**
+     *
+     */
     @Override
     public void checkRank() {
 

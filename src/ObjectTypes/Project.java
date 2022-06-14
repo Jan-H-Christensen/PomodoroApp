@@ -1,5 +1,7 @@
 package ObjectTypes;
-
+/**
+ *
+ */
 public class Project {
 
     private int taskId;

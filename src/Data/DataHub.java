@@ -8,10 +8,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class DataHub {
-
+    /**
+     *
+     */
     private static ObservableList<Project> projectList = FXCollections.observableArrayList();
     private static Property<ObservableList<Project>> listProperty = new SimpleListProperty<>(projectList);
-
+    /**
+     *
+     */
     public static Property<ObservableList<Project>> getListProperty() {
         return listProperty;
     }
@@ -20,7 +24,9 @@ public class DataHub {
     }
 
 
-
+    /**
+     *
+     */
     private static int listenerChecker = 0;
     public static int getListenerChecker() {
         return listenerChecker;
@@ -29,11 +35,14 @@ public class DataHub {
         DataHub.listenerChecker = listenerChecker;
     }
 
-
-
+    /**
+     *
+     */
     private static ObservableList<Project> toDoList = FXCollections.observableArrayList();
     private static Property<ObservableList<Project>> toDoListProperty = new SimpleListProperty<>(toDoList);
-
+    /**
+     *
+     */
     public static ObservableList<Project> getToDoList() {
         return toDoList;
     }

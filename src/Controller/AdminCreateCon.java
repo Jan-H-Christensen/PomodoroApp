@@ -13,7 +13,9 @@ public class AdminCreateCon extends Controller{
 
     @FXML
     public Label nameError, emailError,addressError,phoneError,departmentError,usernameError,passwordError,message;
-
+    /**
+     *
+     */
     @Override
     public void initialize() {
         super.initialize();
@@ -24,7 +26,9 @@ public class AdminCreateCon extends Controller{
     public void remove() {
         super.remove();
     }
-
+    /**
+     *
+     */
     @Override
     public void logOut() {
         super.logOut();
@@ -60,7 +64,9 @@ public class AdminCreateCon extends Controller{
         super.settingsScene();
         clear();
     }
-
+    /**
+     *
+     */
     @FXML
     public void createConsultant() {
         boolean check = true;
@@ -125,7 +131,9 @@ public class AdminCreateCon extends Controller{
             }
         }
     }
-
+    /**
+     *
+     */
     @FXML
     public void clear(){
         message.setText("");

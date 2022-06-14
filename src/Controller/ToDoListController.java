@@ -16,7 +16,9 @@ public class ToDoListController extends Controller{
     public TableView<Project> projectView;
     @FXML
     public Label errorProject;
-
+    /**
+     *
+     */
     @Override
     public void initialize() {
         TableColumn<Project, String> nameCol1 = new TableColumn<>("TaskName");
@@ -36,11 +38,15 @@ public class ToDoListController extends Controller{
         super.initialize();
     }
 
-
+    /**
+     *
+     */
     public void update(){
         DBHandler.setProjects();
     }
-
+    /**
+     *
+     */
     public void add() {
         errorProject.setText("");
         if (!projectView.getSelectionModel().isEmpty()) {
@@ -61,7 +67,9 @@ public class ToDoListController extends Controller{
             errorProject.setText("No project selected");
         }
     }
-
+    /**
+     *
+     */
     public void clean(){
         DataHub.getProjectList().clear();
         errorProject.setText("");

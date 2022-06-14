@@ -9,13 +9,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DBHandler {
-
     private static Connection con;
-
+    /**
+     *
+     */
     public static boolean connect(String name, String code) {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            con = DriverManager.getConnection("jdbc:sqlserver://localhost:1544;databaseName=JensenAndJensen","sa","1234");
+            con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=JensenAndJensen","sa","123456");
             //DNS-server 10.176.111.11
             //Standardgateway 10.176.160.1
             try {
@@ -65,7 +66,9 @@ public class DBHandler {
             return false;
         }
     }
-
+    /**
+     *
+     */
     public static void disconnect() {
         try {
             if (con != null) {
@@ -78,7 +81,9 @@ public class DBHandler {
             System.err.println(e.getMessage());
         }
     }
-
+    /**
+     *
+     */
     public static void setProjects(){
         DataHub.getProjectList().clear();
         try {
@@ -104,7 +109,9 @@ public class DBHandler {
             System.err.println(e.getMessage());
         }
     }
-
+    /**
+     *
+     */
     public static boolean checkTask(int taskID){
         try {
             PreparedStatement ps = con.prepareStatement("exec CheckProject "+taskID);
@@ -128,7 +135,9 @@ public class DBHandler {
             return false;
         }
     }
-
+    /**
+     *
+     */
     public static void reserveTask(int taskID){
         try {
             PreparedStatement ps = con.prepareStatement("exec reservadProject "+taskID);
@@ -138,7 +147,9 @@ public class DBHandler {
             System.err.println(e.getMessage());
         }
     }
-
+    /**
+     *
+     */
     public static void freeTask(int taskID){
         try {
             PreparedStatement ps = con.prepareStatement("exec freeProject "+taskID);
@@ -148,7 +159,9 @@ public class DBHandler {
             System.err.println(e.getMessage());
         }
     }
-
+    /**
+     *
+     */
     public static boolean checkTaskName(String name){
         try {
             PreparedStatement ps = con.prepareStatement("exec CheckTaskName '"+name+"'");
@@ -172,7 +185,9 @@ public class DBHandler {
             return false;
         }
     }
-
+    /**
+     *
+     */
     public static Employee findUser(String username){
         try {
             PreparedStatement ps = con.prepareStatement("exec deleteUser "+"'"+username+"'");
@@ -205,7 +220,9 @@ public class DBHandler {
             return null;
         }
     }
-
+    /**
+     *
+     */
     public static boolean passwordCheck(String username, String password){
         try{
             PreparedStatement ps = con.prepareStatement("exec passwordCheck '"+username+"','"+password+"'");
@@ -229,7 +246,9 @@ public class DBHandler {
             return  false;
         }
     }
-
+    /**
+     *
+     */
     public static void changePassword(int employeeID,String oldPassword,String newPassword,String confirmPassword){
         try{
             PreparedStatement ps = con.prepareStatement("exec changePassword "+employeeID+","+oldPassword+","+newPassword+","+confirmPassword);
@@ -255,7 +274,9 @@ public class DBHandler {
     }
 
      */
-
+    /**
+     *
+     */
     private static void setStatus(){
         DataHub.getProjectList().clear();
         try {
@@ -266,7 +287,9 @@ public class DBHandler {
             System.err.println(e.getMessage());
         }
     }
-
+    /**
+     *
+     */
     public static boolean createConsultant(String name, String userEmail, int userPhone,String userAddress ,  String userDepartment, String username, String password) {
 
         try {
@@ -294,7 +317,9 @@ public class DBHandler {
             return false;
         }
     }
-
+    /**
+     *
+     */
     public static void updateToDoList(double currentProgress){
         try {
             PreparedStatement ps = con.prepareStatement("exec updateToDoList "+Pomodoro.getToDoListID()+","+currentProgress+"");
@@ -304,7 +329,9 @@ public class DBHandler {
             System.err.println(e.getMessage());
         }
     }
-
+    /**
+     *
+     */
     public static void updateToDoList(double currentProgress,int currentPomodoro){
         try {
             PreparedStatement ps = con.prepareStatement("exec updateToDoListAndCurrentPomodoro "+ Pomodoro.getToDoListID()+","+currentProgress+","+currentPomodoro+"");
@@ -314,7 +341,9 @@ public class DBHandler {
             System.err.println(e.getMessage());
         }
     }
-
+    /**
+     *
+     */
     public static void finishPomodoro(){
         try {
             PreparedStatement ps = con.prepareStatement("exec finishPomodoro "+Pomodoro.getToDoListID()+","+Pomodoro.getProject().getTaskId()+"");
@@ -325,7 +354,9 @@ public class DBHandler {
         }
 
     }
-
+    /**
+     *
+     */
     public static void createToDoList(){
         Date date = new java.util.Date();
         SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
@@ -341,7 +372,9 @@ public class DBHandler {
         }
         getToDoList(dateFormat.format(date));
     }
-
+    /**
+     *
+     */
     public static void getToDoList(String date){
         try {
             PreparedStatement ps1 = con.prepareStatement("exec checkToDoList '" + Pomodoro.getProject().getTaskName() + "'," + Employee.getEmpID() + ",'" + date + "'," + Integer.parseInt(Pomodoro.getWorkTime()) + "," + Integer.parseInt(Pomodoro.getBreakTIme()) + "");
@@ -357,7 +390,9 @@ public class DBHandler {
             System.err.println(e.getMessage());
         }
     }
-
+    /**
+     *
+     */
     public static void cancelChecker(){
         try {
             PreparedStatement ps = con.prepareStatement("exec cancelChecker "+Pomodoro.getToDoListID()+"");

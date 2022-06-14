@@ -16,10 +16,17 @@ public class LoginController extends Controller{
     @FXML
     public Label errorText;
 
+    /**
+     * here we override initialize, to clare the method, sins it is not use in this controller
+     */
     @Override
     public void initialize() {
 
     }
+
+    /**
+     *
+     */
     public void login(){
 
         boolean loginCheck = DBHandler.connect(username.getText(),password.getText());
@@ -36,11 +43,17 @@ public class LoginController extends Controller{
         }
     }
 
+    /**
+     *
+     */
     public void close(){
         Stage stage = (Stage) btnCloseApp.getScene().getWindow();
         stage.close();
     }
 
+    /**
+     *
+     */
     public void minimize(){
         Stage stage = (Stage) btnMinimize.getScene().getWindow();
         stage.setIconified(true);

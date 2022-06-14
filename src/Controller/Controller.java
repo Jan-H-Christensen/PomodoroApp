@@ -23,7 +23,9 @@ public class Controller {
     public Button btnAdmin;
     @FXML
     public TableView<Project> toDoList;
-
+    /**
+     *
+     */
     public void initialize(){
         TableColumn<Project, String> toDo1 = new TableColumn<>("TaskName");
         toDo1.setCellValueFactory(new PropertyValueFactory<>("taskName"));
@@ -41,12 +43,18 @@ public class Controller {
         Employee.getRankProperty().addListener((observableValue, s, t1) -> checkRank());
 
     }
+    /**
+     *
+     */
     public void remove(){
         if (!toDoList.getSelectionModel().isEmpty()) {
             DBHandler.freeTask(toDoList.getSelectionModel().getSelectedItem().getTaskId());
             toDoList.getItems().remove(toDoList.getSelectionModel().getSelectedItem());
         }
     }
+    /**
+     *
+     */
     public void logOut(){
         for (Project p : DataHub.getToDoList()){
             DBHandler.freeTask(p.getTaskId());
@@ -63,6 +71,9 @@ public class Controller {
         btnAdmin.setDisable(true);
         logoutScene();
     }
+    /**
+     *
+     */
     @FXML
     public void checkRank(){
         if (Employee.getRank().equalsIgnoreCase("ADMIN")) {
@@ -73,18 +84,27 @@ public class Controller {
             this.btnAdmin.setDisable(true);
         }
     }
+    /**
+     *
+     */
     @FXML
     public  void toDoListScene(){
         DBHandler.setProjects();
         Main.changeScene(ControllerName.ToDoList);
         Main.setSceneLocation();
     }
+    /**
+     *
+     */
     @FXML
     public  void PomodoroStartScene(){
         Main.changeScene(ControllerName.PomodoroStart);
         Main.setSceneLocation();
         DataHub.setListenerChecker(0);
     }
+    /**
+     *
+     */
     @FXML
     public  void adminStartScene(){
         if (Employee.getRank().equalsIgnoreCase("ADMIN")) {
@@ -99,42 +119,65 @@ public class Controller {
             a.show();
         }
     }
+    /**
+     *
+     */
     @FXML
     public  void projectScene(){
         Main.changeScene(ControllerName.Project);
         Main.setSceneLocation();
     }
+    /**
+     *
+     */
     @FXML
     public  void adminCreateScene(){
         Main.changeScene(ControllerName.AdminCreate);
         Main.setSceneLocation();
     }
+    /**
+     *
+     */
     @FXML
     public  void adminDeleteScene(){
         Main.changeScene(ControllerName.AdminDelete);
         Main.setSceneLocation();
     }
+    /**
+     *
+     */
     @FXML
     public  void adminEditScene(){
         Main.changeScene(ControllerName.AdminEdit);
         Main.setSceneLocation();
     }
+    /**
+     *
+     */
     @FXML
     public  void pomodoroProgressScene(){
         Main.changeScene(ControllerName.PomodoroProgress);
         Main.setSceneLocation();
     }
+    /**
+     *
+     */
     @FXML
     public  void settingsScene(){
         Main.changeScene(ControllerName.Settings);
         Main.setSceneLocation();
     }
+    /**
+     *
+     */
     @FXML
     private void logoutScene(){
         Main.changeScene(ControllerName.Login);
         Main.setSceneLocation();
     }
-
+    /**
+     *
+     */
     public void minimize(){
         Stage stage = (Stage) btnMinimize.getScene().getWindow();
         stage.setIconified(true);

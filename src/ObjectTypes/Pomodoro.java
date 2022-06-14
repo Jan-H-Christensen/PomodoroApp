@@ -4,7 +4,9 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 import java.nio.channels.Pipe;
-
+/**
+ *
+ */
 public class Pomodoro {
     private static String name;
     private static String estimateTime;

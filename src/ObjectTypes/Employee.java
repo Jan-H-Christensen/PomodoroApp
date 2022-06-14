@@ -2,7 +2,9 @@ package ObjectTypes;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-
+/**
+ *
+ */
 public class Employee {
     private static int empID;
     private static String name;

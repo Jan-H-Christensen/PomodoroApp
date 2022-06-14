@@ -22,7 +22,9 @@ public class SettingsController extends Controller{
 
     @FXML
     public TextField username;
-
+    /**
+     *
+     */
     @Override
     public void initialize() {
         super.initialize();
@@ -41,7 +43,9 @@ public class SettingsController extends Controller{
             }
         });
     }
-
+    /**
+     *
+     */
     @FXML
     private void changePassword(){
 
@@ -60,7 +64,9 @@ public class SettingsController extends Controller{
             currentPasswordError.setText("Wrong username or password");
         }
     }
-
+    /**
+     *
+     */
     @FXML
     private void clean(){
         currentPassword.clear();

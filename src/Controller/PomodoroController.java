@@ -17,7 +17,9 @@ public class PomodoroController extends Controller{
 
     @FXML
     public CheckBox musicChecker;
-
+    /**
+     *
+     */
     @Override
     public void initialize() {
 
@@ -30,7 +32,9 @@ public class PomodoroController extends Controller{
 
         workTime.setOnKeyReleased(keyEvent -> updateLabel());
     }
-
+    /**
+     *
+     */
     private void updateLabel(){
         final int standardPomodoro = 25;
         if (DataHub.getListenerChecker() == 0 && !toDoList.getSelectionModel().isEmpty()) {
@@ -47,7 +51,9 @@ public class PomodoroController extends Controller{
             status.setText(toDoList.getSelectionModel().getSelectedItem().getStatus());
         }
     }
-
+    /**
+     *
+     */
     @FXML
     public void start(){
         if (workTime.getText().isEmpty()){
@@ -102,11 +108,15 @@ public class PomodoroController extends Controller{
             }
         }
     }
-
+    /**
+     *
+     */
     private void setListener(){
         DataHub.setListenerChecker(1);
     }
-
+    /**
+     *
+     */
     @Override
     public void remove() {
         setListener();
