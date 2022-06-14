@@ -205,6 +205,7 @@ public class DBHandler {
             return null;
         }
     }
+
     public static boolean passwordCheck(String username, String password){
         try{
             PreparedStatement ps = con.prepareStatement("exec passwordCheck '"+username+"','"+password+"'");
@@ -254,6 +255,7 @@ public class DBHandler {
     }
 
      */
+
     private static void setStatus(){
         DataHub.getProjectList().clear();
         try {
