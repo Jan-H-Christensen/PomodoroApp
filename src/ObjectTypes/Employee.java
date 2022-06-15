@@ -11,7 +11,7 @@ import javafx.beans.property.StringProperty;
  *  String address;
  *  String department;
  *  String rank;
- *  StringProperty rankProperty = new SimpleStringProperty("");
+ *  StringProperty rankProperty
  *  A getter and setter is created for each value, so we can update the values
  */
 public class Employee {
