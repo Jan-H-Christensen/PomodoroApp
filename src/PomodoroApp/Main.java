@@ -108,6 +108,10 @@ public class Main extends Application {
         stage.show();
     }
 
+    /**
+     * used to change scene
+     * @param sceneName for the scene you want to change to
+     */
     public static void changeScene(ControllerName sceneName){
 
         stageHandler.setTitle(sceneName.toString());
@@ -119,15 +123,28 @@ public class Main extends Application {
             }
         }
     }
+
+    /**
+     * used to set the location of the stage
+     */
     public static void setSceneLocation(){
         setStageLocation((screenX/2)-(stageHandler.getScene().getWidth()/2),(screenY/2)-(stageHandler.getScene().getHeight()/2));
     }
 
+    /**
+     * used to set the stage in the middle of the screen
+     * @param x x coordinate of the screen
+     * @param y y coordinate of the screen
+     */
     public static void setStageLocation(double x, double y){
         stageHandler.setX(x);
         stageHandler.setY(y);
     }
 
+    /**
+     * used to get accesses to the scenes
+     * @return the sceneController list
+     */
     public static ArrayList<SceneController> getSceneControllers() {
         return sceneControllers;
     }

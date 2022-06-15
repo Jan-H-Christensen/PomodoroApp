@@ -17,7 +17,7 @@ public class ProjectController extends Controller{
     public Label nameError,timeError;
 
     /**
-     * Here in this method
+     * Here in this method we create a project object, if the textFields are not empty, and not already taken
      */
     public void createProject(){
         final int createdProjectCheck = 0;
@@ -49,7 +49,7 @@ public class ProjectController extends Controller{
         }
     }
     /**
-     *
+     * used to clean the stage
      */
     public void clear(){
         name.clear();
