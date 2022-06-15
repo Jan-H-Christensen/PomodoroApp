@@ -3,7 +3,16 @@ package ObjectTypes;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 /**
- *
+ *  This class store this values, for use in other classes
+ *  int empID;
+ *  String name;
+ *  String eMail;
+ *  int phoneNo;
+ *  String address;
+ *  String department;
+ *  String rank;
+ *  StringProperty rankProperty = new SimpleStringProperty("");
+ *  A getter and setter is created for each value, so we can update the values
  */
 public class Employee {
     private static int empID;
