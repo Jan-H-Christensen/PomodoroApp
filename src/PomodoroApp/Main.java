@@ -90,17 +90,6 @@ public class Main extends Application {
         sceneControllers.add(new SceneController(pomodoroProScene,ControllerName.PomodoroProgress));
         sceneControllers.add(new SceneController(settingsScene,ControllerName.Settings));
 
-        stage.setOnCloseRequest(windowEvent -> {
-            if (!DataHub.getToDoList().isEmpty()) {
-                for (Project p : DataHub.getToDoList()) {
-                    DBHandler.freeTask(p.getTaskId());
-                }
-                DataHub.getToDoList().clear();
-            }
-            DBHandler.disconnect();
-            System.exit(1);
-        });
-
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             if (!DataHub.getToDoList().isEmpty()){
                 for (Project p : DataHub.getToDoList()){
