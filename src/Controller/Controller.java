@@ -14,6 +14,13 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+/**
+ * this is the main controller class where all other controller extender from
+ * we have created a base GUI where only the center changes
+ *
+ * @version 1.0
+ * @since 30.06.2022
+ */
 
 public class Controller {
 
@@ -24,7 +31,7 @@ public class Controller {
     @FXML
     public TableView<Project> toDoList;
     /**
-     *
+     * her we always loader To-Do-List listen for every Scene in the different controller classes
      */
     public void initialize(){
         TableColumn<Project, String> toDo1 = new TableColumn<>("TaskName");
@@ -44,7 +51,7 @@ public class Controller {
 
     }
     /**
-     *
+     * her we can remove the selected tasks from the to-do-list
      */
     public void remove(){
         if (!toDoList.getSelectionModel().isEmpty()) {
@@ -53,7 +60,7 @@ public class Controller {
         }
     }
     /**
-     *
+     * her can the user logout and all tasks and to-do-list will be cleared
      */
     public void logOut(){
         for (Project p : DataHub.getToDoList()){
@@ -72,7 +79,7 @@ public class Controller {
         logoutScene();
     }
     /**
-     *
+     * her we check user if admin or consultant for disable or enable admin button
      */
     @FXML
     public void checkRank(){
@@ -85,7 +92,7 @@ public class Controller {
         }
     }
     /**
-     *
+     * her we can change scene to to-do-list load available projects
      */
     @FXML
     public  void toDoListScene(){
@@ -94,33 +101,23 @@ public class Controller {
         Main.setSceneLocation();
     }
     /**
-     *
+     * her we can change scene to pomodoro start
      */
     @FXML
     public  void PomodoroStartScene(){
         Main.changeScene(ControllerName.PomodoroStart);
         Main.setSceneLocation();
-        DataHub.setListenerChecker(0);
     }
     /**
-     *
+     * her we can change to admin start
      */
     @FXML
     public  void adminStartScene(){
-        if (Employee.getRank().equalsIgnoreCase("ADMIN")) {
             Main.changeScene(ControllerName.AdminStart);
             Main.setSceneLocation();
-        }
-        else
-        {
-            Alert a = new Alert(Alert.AlertType.NONE);
-            a.setAlertType(Alert.AlertType.WARNING);
-            a.setContentText("YOU ARE NOT A ADMIN\nYOU ACCESS TRY WILL BE RECORDED");
-            a.show();
-        }
     }
     /**
-     *
+     * her we can change scene to project
      */
     @FXML
     public  void projectScene(){
@@ -128,7 +125,7 @@ public class Controller {
         Main.setSceneLocation();
     }
     /**
-     *
+     * her we can change scene to create user
      */
     @FXML
     public  void adminCreateScene(){
@@ -136,7 +133,7 @@ public class Controller {
         Main.setSceneLocation();
     }
     /**
-     *
+     * her we can change scene to delete user
      */
     @FXML
     public  void adminDeleteScene(){
@@ -144,7 +141,7 @@ public class Controller {
         Main.setSceneLocation();
     }
     /**
-     *
+     * her we can change scene to edit user
      */
     @FXML
     public  void adminEditScene(){
@@ -152,7 +149,7 @@ public class Controller {
         Main.setSceneLocation();
     }
     /**
-     *
+     * her we can change scene to pomodoro progress
      */
     @FXML
     public  void pomodoroProgressScene(){
@@ -160,7 +157,7 @@ public class Controller {
         Main.setSceneLocation();
     }
     /**
-     *
+     * her we can change scene to settings
      */
     @FXML
     public  void settingsScene(){
@@ -168,7 +165,7 @@ public class Controller {
         Main.setSceneLocation();
     }
     /**
-     *
+     * her we can change scene to login
      */
     @FXML
     private void logoutScene(){
@@ -176,7 +173,7 @@ public class Controller {
         Main.setSceneLocation();
     }
     /**
-     *
+     * her we can minimize de scenes
      */
     public void minimize(){
         Stage stage = (Stage) btnMinimize.getScene().getWindow();

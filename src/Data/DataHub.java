@@ -22,18 +22,6 @@ public class DataHub {
         return projectList;
     }
 
-
-    /**
-     * her we have a checker, to make sure we are inside the right scene
-     */
-    private static int listenerChecker = 0;
-    public static int getListenerChecker() {
-        return listenerChecker;
-    }
-    public static void setListenerChecker(int listenerChecker) {
-        DataHub.listenerChecker = listenerChecker;
-    }
-
     /**
      *  here we store the date for the toDoList, and create a SimpleListProperty
      */

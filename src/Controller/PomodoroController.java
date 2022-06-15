@@ -1,6 +1,5 @@
 package Controller;
 
-import Data.DataHub;
 import Data.Pomodoro;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
@@ -37,7 +36,7 @@ public class PomodoroController extends Controller{
      */
     private void updateLabel(){
         final int standardPomodoro = 25;
-        if (DataHub.getListenerChecker() == 0 && !toDoList.getSelectionModel().isEmpty()) {
+        if (!toDoList.getSelectionModel().isEmpty()) {
             name.setText(toDoList.getSelectionModel().getSelectedItem().getTaskName());
             estimateTime.setText("" + toDoList.getSelectionModel().getSelectedItem().getEstimatedTime());
             if (workTime.getText().isEmpty()) {
@@ -111,15 +110,8 @@ public class PomodoroController extends Controller{
     /**
      *
      */
-    private void setListener(){
-        DataHub.setListenerChecker(1);
-    }
-    /**
-     *
-     */
     @Override
     public void remove() {
-        setListener();
         name.setText("");
         estimateTime.setText("");
         EstimatedPomodoro.setText("");
@@ -129,38 +121,32 @@ public class PomodoroController extends Controller{
 
     @Override
     public void logOut() {
-        setListener();
         super.logOut();
     }
 
     @Override
     public void toDoListScene() {
-        setListener();
         super.toDoListScene();
     }
 
     @Override
     public void adminStartScene() {
-        setListener();
         super.adminStartScene();
     }
 
     @Override
     public void PomodoroStartScene() {
-        setListener();
         remove();
         super.PomodoroStartScene();
     }
 
     @Override
     public void projectScene() {
-        setListener();
         super.projectScene();
     }
 
     @Override
     public void pomodoroProgressScene() {
-        setListener();
         super.pomodoroProgressScene();
     }
 }

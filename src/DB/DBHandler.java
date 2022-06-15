@@ -261,19 +261,6 @@ public class DBHandler {
         }
     }
 
-    /*
-    public static void getUsername(int employeeID){
-        try{
-            PreparedStatement ps = con.prepareStatement("exec getUsename"+employeeID);
-            ps.executeUpdate();
-
-            ps.close();
-        }catch (SQLException e){
-            System.err.println(e.getMessage());
-        }
-    }
-
-     */
     /**
      *
      */
