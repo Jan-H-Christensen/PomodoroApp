@@ -10,6 +10,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
+/**
+ * in this scene we can change the look of the application and the user password
+ *
+ * @version 1.0
+ * @since 30.05.2022
+ */
 public class SettingsController extends Controller{
 
     @FXML
@@ -22,7 +28,7 @@ public class SettingsController extends Controller{
     @FXML
     public TextField username;
     /**
-     *
+     * her we also checker a checkbox if he is selected if he is selected the look will change to the selected design
      */
     @Override
     public void initialize() {
@@ -43,7 +49,7 @@ public class SettingsController extends Controller{
         });
     }
     /**
-     *
+     * her we change password of the user by checking the values what has been entered
      */
     @FXML
     private void changePassword(){
@@ -64,7 +70,7 @@ public class SettingsController extends Controller{
         }
     }
     /**
-     *
+     * removes all information from the labels and textField
      */
     @FXML
     private void clean(){
