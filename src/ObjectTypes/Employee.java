@@ -13,6 +13,7 @@ import javafx.beans.property.StringProperty;
  *  String rank;
  *  StringProperty rankProperty
  *  A getter and setter is created for each value, so we can update the values
+ *  All values and methods are static
  */
 public class Employee {
     private static int empID;

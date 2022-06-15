@@ -5,7 +5,19 @@ import javafx.beans.property.StringProperty;
 
 import java.nio.channels.Pipe;
 /**
- *
+ * Here we store the data of the pomodoro that the user ,is currently using, so that we can create the right pomodoro.
+ * String name; for the project name
+ * String estimateTime; for the project estimate time
+ * String estimatePomodoro; for the estimated pomodoro it shut take
+ * String status; for the project current status
+ * String workTime; for the pomodoro work time
+ * String breakTIme; for the pomodoro break time
+ * String currentPomodoro; the current pomodoro the user is at
+ * Project project; the project object, to update the project in the database
+ * int toDoListID; the todolist in the database id, to update the database
+ * boolean sound; a boolean to confirm if the user wants to have sound
+ * The values and methods are static
+ * There is also the clear method, where we clear all values in the class
  */
 public class Pomodoro {
     private static String name;
