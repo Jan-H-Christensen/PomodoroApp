@@ -1,8 +1,7 @@
 package Controller;
 
 import DB.DBHandler;
-import ObjectTypes.Config;
-import ObjectTypes.Employee;
+import Data.Employee;
 import PomodoroApp.Main;
 import PomodoroApp.SceneController;
 import javafx.fxml.FXML;

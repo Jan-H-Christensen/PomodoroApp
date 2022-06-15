@@ -1,8 +1,8 @@
 package DB;
 
 import Data.DataHub;
-import ObjectTypes.Employee;
-import ObjectTypes.Pomodoro;
+import Data.Employee;
+import Data.Pomodoro;
 import ObjectTypes.Project;
 import java.sql.*;
 import java.text.SimpleDateFormat;

@@ -1,4 +1,4 @@
-package ObjectTypes;
+package Data;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;

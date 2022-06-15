@@ -2,7 +2,7 @@ package Controller;
 
 import DB.DBHandler;
 import Data.DataHub;
-import ObjectTypes.Employee;
+import Data.Employee;
 import ObjectTypes.Project;
 import PomodoroApp.ControllerName;
 import PomodoroApp.Main;

@@ -1,9 +1,9 @@
-package ObjectTypes;
+package Data;
 
+import ObjectTypes.Project;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-import java.nio.channels.Pipe;
 /**
  * Here we store the data of the pomodoro that the user ,is currently using, so that we can create the right pomodoro.
  * String name; for the project name

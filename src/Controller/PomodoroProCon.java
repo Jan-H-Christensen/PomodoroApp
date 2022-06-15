@@ -1,7 +1,7 @@
 package Controller;
 
 import DB.DBHandler;
-import ObjectTypes.Pomodoro;
+import Data.Pomodoro;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;

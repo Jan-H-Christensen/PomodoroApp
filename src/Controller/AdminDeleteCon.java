@@ -1,10 +1,6 @@
 package Controller;
 
 
-import DB.DBHandler;
-import ObjectTypes.Employee;
-import javafx.fxml.FXML;
-
 public class AdminDeleteCon extends Controller{
 
     @Override

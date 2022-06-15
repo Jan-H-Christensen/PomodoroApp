@@ -1,7 +1,7 @@
 package Controller;
 
 import Data.DataHub;
-import ObjectTypes.Pomodoro;
+import Data.Pomodoro;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;

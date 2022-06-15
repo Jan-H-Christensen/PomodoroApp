@@ -1,6 +1,5 @@
 package Data;
 
-import ObjectTypes.Employee;
 import ObjectTypes.Project;
 import javafx.beans.property.Property;
 import javafx.beans.property.SimpleListProperty;

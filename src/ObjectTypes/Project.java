@@ -1,6 +1,12 @@
 package ObjectTypes;
 /**
- *
+ * This class stores date for the individual project
+ * int taskId;
+ * int estimatedTime;
+ * int numberWorkOn;
+ * String taskName;
+ * String status;
+ * This class is non-static class, because it is intended to be used as an object
  */
 public class Project {
 
@@ -21,6 +27,7 @@ public class Project {
     public void setTaskId(int taskId) {
         this.taskId = taskId;
     }
+
     public int getTaskId() {
         return taskId;
     }
