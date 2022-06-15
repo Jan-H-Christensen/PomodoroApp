@@ -17,7 +17,8 @@ public class ToDoListController extends Controller{
     @FXML
     public Label errorProject;
     /**
-     *
+     * Inside initialize we create the columns for the projectView, so we can show the projects
+     * We use the super initialize to set up the ToDoList table
      */
     @Override
     public void initialize() {
@@ -39,13 +40,13 @@ public class ToDoListController extends Controller{
     }
 
     /**
-     *
+     * This method call a DBHandler that updates the observableList
      */
     public void update(){
         DBHandler.setProjects();
     }
     /**
-     *
+     * This method will add a project from the projectTable to the toDoListTable if the task inside the projectTable is selected and not already taken
      */
     public void add() {
         errorProject.setText("");
@@ -68,7 +69,7 @@ public class ToDoListController extends Controller{
         }
     }
     /**
-     *
+     * This method clears the scene, and makes it ready for other use
      */
     public void clean(){
         DataHub.getProjectList().clear();

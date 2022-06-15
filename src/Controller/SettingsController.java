@@ -108,8 +108,7 @@ public class SettingsController extends Controller{
 
     @FXML
     public void saveSettings(){
-        Config config = new Config(this);
-        config.saveSettings();
+
     }
 
     @Override
