@@ -34,26 +34,27 @@ public class PomodoroController extends Controller{
         workTime.setOnKeyReleased(keyEvent -> updateLabel());
     }
     /**
-     *
+     * THis method updates the labels of the if the scene, as long as a task is selected,
+     * and the calculation changes depending on what is written inside the textField
      */
     private void updateLabel(){
         final int standardPomodoro = 25;
         if (!toDoList.getSelectionModel().isEmpty()) {
             name.setText(toDoList.getSelectionModel().getSelectedItem().getTaskName());
             estimateTime.setText("" + toDoList.getSelectionModel().getSelectedItem().getEstimatedTime());
-            if (workTime.getText().isEmpty()) {
-                int estimated = toDoList.getSelectionModel().getSelectedItem().getEstimatedTime();
-                EstimatedPomodoro.setText("" + (int) Math.ceil((double) estimated / standardPomodoro));
-            } else {
+            if (!workTime.getText().isEmpty() && workTime.getText().matches("\\d*")) {
                 int estimated = toDoList.getSelectionModel().getSelectedItem().getEstimatedTime();
                 int workTimeNum = Integer.parseInt(workTime.getText());
                 EstimatedPomodoro.setText("" + (int) Math.ceil((double) estimated / workTimeNum));
+            } else {
+                int estimated = toDoList.getSelectionModel().getSelectedItem().getEstimatedTime();
+                EstimatedPomodoro.setText("" + (int) Math.ceil((double) estimated / standardPomodoro));
             }
             status.setText(toDoList.getSelectionModel().getSelectedItem().getStatus());
         }
     }
     /**
-     *
+     * This method updates the Pomodoro static class as long as all requirements are for filled
      */
     @FXML
     public void start(){
@@ -110,7 +111,7 @@ public class PomodoroController extends Controller{
         }
     }
     /**
-     *
+     * removes the selected task
      */
     @Override
     public void remove() {
