@@ -106,11 +106,6 @@ public class SettingsController extends Controller{
         super.settingsScene();
     }
 
-    @FXML
-    public void saveSettings(){
-
-    }
-
     @Override
     public void minimize() {
         super.minimize();
