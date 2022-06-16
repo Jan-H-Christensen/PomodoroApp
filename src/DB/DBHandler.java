@@ -10,8 +10,12 @@ import java.util.Date;
 
 public class DBHandler {
     private static Connection con;
+
     /**
-     * Here we connect to the database
+     * Her we connect to the database be using a username and a password
+     * @param name is a username for entering the Application
+     * @param code is the password to check if he is allowed to enter
+     * @return a boolean so the application knows if the entered username and password was correct or not
      */
     public static boolean connect(String name, String code) {
         try {
@@ -65,7 +69,7 @@ public class DBHandler {
         }
     }
     /**
-     *
+     * disconnect from the database
      */
     public static void disconnect() {
         try {
@@ -80,7 +84,7 @@ public class DBHandler {
         }
     }
     /**
-     *
+     * gets all available projects in the database
      */
     public static void setProjects(){
         DataHub.getProjectList().clear();
@@ -107,8 +111,11 @@ public class DBHandler {
             System.err.println(e.getMessage());
         }
     }
+
     /**
-     *
+     * checks for if a project from the list is free or in use
+     * @param taskID to find the number of work on
+     * @return a boolean so the application know if ti is in use
      */
     public static boolean checkTask(int taskID){
         try {
@@ -133,8 +140,10 @@ public class DBHandler {
             return false;
         }
     }
+
     /**
-     *
+     * update the number of workOn in the database, to be reserved
+     * @param taskID is needed to find the right task and update the workOn
      */
     public static void reserveTask(int taskID){
         try {
@@ -146,7 +155,8 @@ public class DBHandler {
         }
     }
     /**
-     *
+     * update the numberOfWorkOn back is the current project has been reset / interrupted
+     * @param taskID is needed the reset project
      */
     public static void freeTask(int taskID){
         try {
@@ -158,7 +168,9 @@ public class DBHandler {
         }
     }
     /**
-     *
+     * checks for the task name if it already exists
+     * @param name is needed so the stored procedure is look in the database if the one exists
+     * @return a boolean so the application notes if the there is one with the same name
      */
     public static boolean checkTaskName(String name){
         try {
@@ -184,7 +196,9 @@ public class DBHandler {
         }
     }
     /**
-     *
+     * her we can delete a consultant by only deleting Login
+     * @param username is needed to find the user we want to delete
+     * @return the consultant that are stored at the username
      */
     public static Employee findUser(String username){
         try {
@@ -219,7 +233,10 @@ public class DBHandler {
         }
     }
     /**
-     *
+     * checks if the entered username and password is correct
+     * @param username is the name of the consultant for the application
+     * @param password is corresponding code to the username
+     * @return a boolean so the application notes if the entered username and password was correct
      */
     public static boolean passwordCheck(String username, String password){
         try{
@@ -245,7 +262,11 @@ public class DBHandler {
         }
     }
     /**
-     *
+     * her the user can change the password
+     * @param employeeID her he is checking for which user is logged in, to make be sure no other can change password
+     * @param oldPassword is the current password that the user wants to change
+     * @param newPassword is the new password
+     * @param confirmPassword ist the new password again to be sure he did not make a typing mistake
      */
     public static void changePassword(int employeeID,String oldPassword,String newPassword,String confirmPassword){
         try{
@@ -260,7 +281,7 @@ public class DBHandler {
     }
 
     /**
-     *
+     * sets the status for the user to be online or not
      */
     private static void setStatus(){
         DataHub.getProjectList().clear();
@@ -272,8 +293,17 @@ public class DBHandler {
             System.err.println(e.getMessage());
         }
     }
+
     /**
-     *
+     * her we're adding a new consultant and a Login for the application to the database
+     * @param name Consultant name
+     * @param userEmail Consultant E-Mail
+     * @param userPhone Consultant phone number
+     * @param userAddress Consultant address
+     * @param userDepartment Consultant department where will work
+     * @param username Consultant username for the application
+     * @param password Consultant password to enter the application
+     * @return a boolean if the username already exists
      */
     public static boolean createConsultant(String name, String userEmail, int userPhone,String userAddress ,  String userDepartment, String username, String password) {
 
@@ -302,8 +332,10 @@ public class DBHandler {
             return false;
         }
     }
+
     /**
-     *
+     * her we update the progress of the current pomodoro time to the database
+     * @param currentProgress is the progress at the update time
      */
     public static void updateToDoList(double currentProgress){
         try {
@@ -314,8 +346,11 @@ public class DBHandler {
             System.err.println(e.getMessage());
         }
     }
+
     /**
-     *
+     * her we update the progress of the current pomodoro time and number to the database
+     * @param currentProgress is the progress at the update time
+     * @param currentPomodoro is the number of the current pomodoro
      */
     public static void updateToDoList(double currentProgress,int currentPomodoro){
         try {
@@ -326,8 +361,9 @@ public class DBHandler {
             System.err.println(e.getMessage());
         }
     }
+
     /**
-     *
+     * update the status to finish when done
      */
     public static void finishPomodoro(){
         try {
@@ -340,7 +376,7 @@ public class DBHandler {
 
     }
     /**
-     *
+     * creates a new to-do-list to the database and when created it selects the to-do-list
      */
     public static void createToDoList(){
         Date date = new java.util.Date();
@@ -357,12 +393,15 @@ public class DBHandler {
         }
         getToDoList(dateFormat.format(date));
     }
+
     /**
+     * get the listID and taskID of the current pomodoro
+     * @param date is needed to be sure we have the right to-do-list
      *
      */
     public static void getToDoList(String date){
         try {
-            PreparedStatement ps1 = con.prepareStatement("exec checkToDoList '" + Pomodoro.getProject().getTaskName() + "'," + Employee.getEmpID() + ",'" + date + "'," + Integer.parseInt(Pomodoro.getWorkTime()) + "," + Integer.parseInt(Pomodoro.getBreakTIme()) + "");
+            PreparedStatement ps1 = con.prepareStatement("exec checkToDoList '" + Pomodoro.getProject().getTaskName() + "'," + Employee.getEmpID() + ",'" + date + "'," + Integer.parseInt(Pomodoro.getWorkTime()) + "," + Integer.parseInt(Pomodoro.getBreakTIme()));
             ResultSet rs = ps1.executeQuery();
 
             while (rs.next()) {
@@ -376,7 +415,7 @@ public class DBHandler {
         }
     }
     /**
-     *
+     * updater task status in the database
      */
     public static void cancelChecker(){
         try {
