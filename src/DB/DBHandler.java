@@ -11,7 +11,7 @@ import java.util.Date;
 public class DBHandler {
     private static Connection con;
     /**
-     *
+     * Here we connect to the database
      */
     public static boolean connect(String name, String code) {
         try {
