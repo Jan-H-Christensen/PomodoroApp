@@ -15,7 +15,11 @@ import javafx.scene.media.MediaView;
 import javafx.util.Duration;
 
 import java.io.File;
-
+/**
+ * @author NIels Rogengell
+ * @version 1.0
+ * @since 30-5-2022
+ */
 public class PomodoroProCon extends Controller{
 
     @FXML

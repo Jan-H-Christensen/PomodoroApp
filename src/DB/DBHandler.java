@@ -8,6 +8,12 @@ import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * @author NIels Rogengell,Jan Christensen, Brian Frost
+ * @version 1.0
+ * @since 30-5-2022
+ */
+
 public class DBHandler {
     private static Connection con;
 

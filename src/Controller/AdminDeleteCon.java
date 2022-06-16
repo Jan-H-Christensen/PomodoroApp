@@ -1,6 +1,10 @@
 package Controller;
 
-
+/**
+ * @author Brian Frost
+ * @version 1.0
+ * @since 30-5-2022
+ */
 public class AdminDeleteCon extends Controller{
 
     @Override
@@ -42,13 +46,6 @@ public class AdminDeleteCon extends Controller{
     public void settingsScene() {
         super.settingsScene();
     }
-    /*
-    @FXML
-    public void findUser(){
-        Employee employee = DBHandler.findUser(serchID.getText);
-    }
-
-     */
 
     @Override
     public void minimize() {

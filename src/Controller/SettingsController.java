@@ -9,6 +9,11 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+/**
+ * @author Jan Christensen
+ * @version 1.0
+ * @since 30-5-2022
+ */
 
 /**
  * in this scene we can change the look of the application and the user password

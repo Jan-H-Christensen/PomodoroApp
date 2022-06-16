@@ -7,7 +7,6 @@ import ObjectTypes.Project;
 import PomodoroApp.ControllerName;
 import PomodoroApp.Main;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -17,7 +16,7 @@ import javafx.stage.Stage;
 /**
  * this is the main controller class where all other controller extender from
  * we have created a base GUI where only the center changes
- *
+ * @author Jan Christensen, NIels Rogengell
  * @version 1.0
  * @since 30.05.2022
  */

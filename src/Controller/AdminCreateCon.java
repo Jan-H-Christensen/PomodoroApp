@@ -5,7 +5,11 @@ import DB.DBHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-
+/**
+ * @author Brian Frost
+ * @version 1.0
+ * @since 30-5-2022
+ */
 public class AdminCreateCon extends Controller{
 
     @FXML

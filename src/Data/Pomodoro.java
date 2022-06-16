@@ -5,6 +5,12 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
+ * @author NIels Rogengell
+ * @version 1.0
+ * @since 30-5-2022
+ */
+
+/**
  * Here we store the data of the pomodoro that the user ,is currently using, so that we can create the right pomodoro.
  * String name; for the project name
  * String estimateTime; for the project estimate time

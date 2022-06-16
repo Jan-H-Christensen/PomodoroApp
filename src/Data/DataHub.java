@@ -6,6 +6,12 @@ import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+/**
+ * @author NIels Rogengell
+ * @version 1.0
+ * @since 30-5-2022
+ */
+
 public class DataHub {
     /**
      * here we store date for the project list

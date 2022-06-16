@@ -1,5 +1,11 @@
 package ObjectTypes;
 /**
+ * @author NIels Rogengell
+ * @version 1.0
+ * @since 30-5-2022
+ */
+
+/**
  * This class stores date for the individual project
  * int taskId;
  * int estimatedTime;

@@ -6,7 +6,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
+/**
+ * @author NIels Rogengell
+ * @version 1.0
+ * @since 30-5-2022
+ */
 public class LoginController extends Controller{
     @FXML
     public TextField username,password;

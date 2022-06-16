@@ -8,6 +8,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+/**
+ * @author NIels Rogengell
+ * @version 1.0
+ * @since 30-5-2022
+ */
+
 public class ProjectController extends Controller{
 
     @FXML

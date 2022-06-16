@@ -14,6 +14,11 @@ import javafx.stage.StageStyle;
 
 import java.util.ArrayList;
 
+/**
+ * @author NIels Rogengell,Jan Christensen
+ * @version 1.0
+ * @since 30-5-2022
+ */
 public class Main extends Application {
 
     private static Rectangle2D screenBounds = Screen.getPrimary().getBounds();

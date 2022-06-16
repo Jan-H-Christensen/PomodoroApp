@@ -2,6 +2,12 @@ package Data;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+
+/**
+ * @author NIels Rogengell
+ * @version 1.0
+ * @since 30-5-2022
+ */
 /**
  *  This class store this values, for use in other classes
  *  int empID;

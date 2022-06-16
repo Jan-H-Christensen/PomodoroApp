@@ -1,6 +1,9 @@
 package Controller;
-
-
+/**
+ * @author Brian Frost
+ * @version 1.0
+ * @since 30-5-2022
+ */
 public class AdminController extends Controller{
 
     @Override
