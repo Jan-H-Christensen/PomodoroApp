@@ -22,8 +22,8 @@ public class PomodoroController extends Controller{
     public CheckBox musicChecker;
     /**
      * This initializes also does the super initialize, but it also resets the error labels and it hase 2 events
-     * 1. is the toDoList.setOnMouseClicked(mouseEvent -> ) that does the updateLabel method, when toy click in the tableview
-     * 2. is the  workTime.setOnKeyReleased(keyEvent -> ) that does the same but, the method is called when you press a key, when you are inside the textField
+     * 1 is the toDoList.setOnMouseClicked(mouseEvent -> ) that does the updateLabel method, when toy click in the tableview
+     * 2 is the  workTime.setOnKeyReleased(keyEvent -> ) that does the same but, the method is called when you press a key, when you are inside the textField
      */
     @Override
     public void initialize() {
