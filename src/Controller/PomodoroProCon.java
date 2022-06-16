@@ -42,7 +42,11 @@ public class PomodoroProCon extends Controller{
     private MediaPlayer timerMediaPlayer;
     private MediaPlayer endMediaPlayer;
     /**
-     *
+     * Inside initialize we do teh super initialize
+     * Then we bind the labels to the data from the previous labels
+     * Then it set all the buttons from the base GUI til disabled, to ensure a more safe proses
+     * Than it sets up two timelines for the work progressbar and the break progressbar
+     * Than it set up the sound files, so we can use it later on
      */
     @Override
     public void initialize() {
@@ -104,7 +108,7 @@ public class PomodoroProCon extends Controller{
 
     }
     /**
-     *
+     * Here we end the work progressbar, updates the database and start the break progressbar
      */
     private void endWorkProc(){
         workProgress.stop();
@@ -121,7 +125,7 @@ public class PomodoroProCon extends Controller{
         }
     }
     /**
-     *
+     * Here we end the break progressbar, update the database and ready the application to start a new one, finish or cancel
      */
     private void endBreakProc(){
         breakProgress.stop();
@@ -137,7 +141,8 @@ public class PomodoroProCon extends Controller{
         endMediaPlayer.play();
     }
     /**
-     *
+     * Here we finish the task and set the task as finished in the database,
+     * and change the scene to pomodoroStartScene
      */
     @FXML
     private void finish(){
@@ -157,7 +162,7 @@ public class PomodoroProCon extends Controller{
         }
     }
     /**
-     *
+     * Here we interrupt a progress so work jumps to work end and break to break end
      */
     @FXML
     private void interrupt(){
@@ -168,7 +173,12 @@ public class PomodoroProCon extends Controller{
         }
     }
     /**
-     *
+     * Here we start the pomodoro
+     * First we reset everything
+     * Update the current pomodoro
+     * disable and enable buttons that are needed
+     * Creates an ToDoList
+     * Lastly check if the sound should be played
      */
     @FXML
     public void Start(){
@@ -189,7 +199,7 @@ public class PomodoroProCon extends Controller{
         }
     }
     /**
-     *
+     * Here we pause the progress bars, depending on with it is on
      */
     @FXML
     public void Pause(){
@@ -202,7 +212,7 @@ public class PomodoroProCon extends Controller{
         }
     }
     /**
-     *
+     * Here we resume the progress bars, depending on with it is on
      */
     @FXML
     public void Resume(){
@@ -215,7 +225,7 @@ public class PomodoroProCon extends Controller{
         }
     }
     /**
-     *
+     * Here we cancel the task, updates the taks in database and clear the program for a new task and pomodoro
      */
     @FXML
     public void Cancel(){
@@ -234,7 +244,7 @@ public class PomodoroProCon extends Controller{
         super.PomodoroStartScene();
     }
     /**
-     *
+     * Here we override the checkRank method, so that the admin button does not enable on the scene
      */
     @Override
     public void checkRank() {
