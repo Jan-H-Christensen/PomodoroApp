@@ -14,7 +14,7 @@ public class AdminCreateCon extends Controller{
     @FXML
     public Label nameError, emailError,addressError,phoneError,departmentError,usernameError,passwordError,message;
     /**
-     *
+     * Here it initializes the suer initialize and clear the scene
      */
     @Override
     public void initialize() {
@@ -26,9 +26,7 @@ public class AdminCreateCon extends Controller{
     public void remove() {
         super.remove();
     }
-    /**
-     *
-     */
+
     @Override
     public void logOut() {
         super.logOut();
@@ -65,7 +63,7 @@ public class AdminCreateCon extends Controller{
         clear();
     }
     /**
-     *
+     * Here we create consultant if all, information is inserted correctly
      */
     @FXML
     public void createConsultant() {
@@ -132,7 +130,7 @@ public class AdminCreateCon extends Controller{
         }
     }
     /**
-     *
+     * Here we clear the scene
      */
     @FXML
     public void clear(){
